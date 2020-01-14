@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class EnemyManager : MonoBehaviour
 {
-    //PlayerCharacterController m_PlayerController;
+    PlayerCharacterController m_PlayerController;
 
     public List<EnemyController> enemies { get; private set; }
     public int numberOfEnemiesTotal { get; private set; }
@@ -14,8 +14,8 @@ public class EnemyManager : MonoBehaviour
 
     private void Awake()
     {
-        //m_PlayerController = FindObjectOfType<PlayerCharacterController>();
-        //DebugUtility.HandleErrorIfNullFindObject<PlayerCharacterController, EnemyManager>(m_PlayerController, this);
+        m_PlayerController = FindObjectOfType<PlayerCharacterController>();
+        DebugUtility.HandleErrorIfNullFindObject<PlayerCharacterController, EnemyManager>(m_PlayerController, this);
 
         enemies = new List<EnemyController>();
     }

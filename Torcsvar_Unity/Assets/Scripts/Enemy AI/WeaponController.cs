@@ -21,7 +21,6 @@ public struct CrosshairData
 [RequireComponent(typeof(AudioSource))]
 public class WeaponController : MonoBehaviour
 {
-    //probably will not use
     [Header("Information")]
     [Tooltip("The name that will be displayed in the UI for this weapon")]
     public string weaponName;
@@ -43,8 +42,8 @@ public class WeaponController : MonoBehaviour
     [Tooltip("The type of weapon wil affect how it shoots")]
     public WeaponShootType shootType;
     [Tooltip("The projectile prefab")]
-    //public ProjectileBase projectilePrefab;
-    //[Tooltip("Minimum duration between two shots")]
+    public ProjectileBase projectilePrefab;
+    [Tooltip("Minimum duration between two shots")]
     public float delayBetweenShots = 0.5f;
     [Tooltip("Angle for the cone in which the bullets will be shot randomly (0 means no spread at all)")]
     public float bulletSpreadAngle = 0f;
@@ -106,7 +105,7 @@ public class WeaponController : MonoBehaviour
         m_LastMuzzlePosition = weaponMuzzle.position;
 
         m_ShootAudioSource = GetComponent<AudioSource>();
-        //DebugUtility.HandleErrorIfNullGetComponent<AudioSource, WeaponController>(m_ShootAudioSource, this, gameObject);
+        DebugUtility.HandleErrorIfNullGetComponent<AudioSource, WeaponController>(m_ShootAudioSource, this, gameObject);
     }
 
     void Update()
@@ -281,8 +280,8 @@ public class WeaponController : MonoBehaviour
         for (int i = 0; i < bulletsPerShot; i++)
         {
             Vector3 shotDirection = GetShotDirectionWithinSpread(weaponMuzzle);
-            //ProjectileBase newProjectile = Instantiate(projectilePrefab, weaponMuzzle.position, Quaternion.LookRotation(shotDirection));
-            //newProjectile.Shoot(this);
+            ProjectileBase newProjectile = Instantiate(projectilePrefab, weaponMuzzle.position, Quaternion.LookRotation(shotDirection));
+            newProjectile.Shoot(this);
         }
 
         // muzzle flash

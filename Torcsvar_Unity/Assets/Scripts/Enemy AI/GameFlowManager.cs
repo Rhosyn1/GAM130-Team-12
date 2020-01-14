@@ -28,21 +28,21 @@ public class GameFlowManager : MonoBehaviour
 
     public bool gameIsEnding { get; private set; }
 
-    //PlayerCharacterController m_Player;
-    //NotificationHUDManager m_NotificationHUDManager;
-    //ObjectiveManager m_ObjectiveManager;
+    PlayerCharacterController m_Player;
+    NotificationHUDManager m_NotificationHUDManager;
+    ObjectiveManager m_ObjectiveManager;
     float m_TimeLoadEndGameScene;
     string m_SceneToLoad;
 
     void Start()
     {
-      //  m_Player = FindObjectOfType<PlayerCharacterController>();
-        //DebugUtility.HandleErrorIfNullFindObject<PlayerCharacterController, GameFlowManager>(m_Player, this);
+        m_Player = FindObjectOfType<PlayerCharacterController>();
+        DebugUtility.HandleErrorIfNullFindObject<PlayerCharacterController, GameFlowManager>(m_Player, this);
 
-        //m_ObjectiveManager = FindObjectOfType<ObjectiveManager>();
-		//DebugUtility.HandleErrorIfNullFindObject<ObjectiveManager, GameFlowManager>(m_ObjectiveManager, this);
-        
-        //AudioUtility.SetMasterVolume(1);
+        m_ObjectiveManager = FindObjectOfType<ObjectiveManager>();
+		DebugUtility.HandleErrorIfNullFindObject<ObjectiveManager, GameFlowManager>(m_ObjectiveManager, this);
+
+        AudioUtility.SetMasterVolume(1);
     }
 
     void Update()
@@ -52,7 +52,7 @@ public class GameFlowManager : MonoBehaviour
             float timeRatio = 1 - (m_TimeLoadEndGameScene - Time.time) / endSceneLoadDelay;
             endGameFadeCanvasGroup.alpha = timeRatio;
 
-            //AudioUtility.SetMasterVolume(1 - timeRatio);
+            AudioUtility.SetMasterVolume(1 - timeRatio);
 
             // See if it's time to load the end scene (after the delay)
             if (Time.time >= m_TimeLoadEndGameScene)
@@ -63,12 +63,12 @@ public class GameFlowManager : MonoBehaviour
         }
         else
         {
-            //if (m_ObjectiveManager.AreAllObjectivesCompleted())
-              //  EndGame(true);
+            if (m_ObjectiveManager.AreAllObjectivesCompleted())
+                EndGame(true);
 
             // Test if player died
-            //if (m_Player.isDead)
-             //   EndGame(false);
+            if (m_Player.isDead)
+                EndGame(false);
         }
     }
 
@@ -90,16 +90,16 @@ public class GameFlowManager : MonoBehaviour
             var audioSource = gameObject.AddComponent<AudioSource>();
             audioSource.clip = victorySound;
             audioSource.playOnAwake = false;
-            //audioSource.outputAudioMixerGroup = AudioUtility.GetAudioGroup(AudioUtility.AudioGroups.HUDVictory);
+            audioSource.outputAudioMixerGroup = AudioUtility.GetAudioGroup(AudioUtility.AudioGroups.HUDVictory);
             audioSource.PlayScheduled(AudioSettings.dspTime + delayBeforeWinMessage);
 
             // create a game message
-           // var message = Instantiate(WinGameMessagePrefab).GetComponent<DisplayMessage>();
-           // if (message)
-          //  {
-          //      message.delayBeforeShowing = delayBeforeWinMessage;
-          //      message.GetComponent<Transform>().SetAsLastSibling();
-          //  }
+            var message = Instantiate(WinGameMessagePrefab).GetComponent<DisplayMessage>();
+            if (message)
+            {
+                message.delayBeforeShowing = delayBeforeWinMessage;
+                message.GetComponent<Transform>().SetAsLastSibling();
+            }
         }
         else
         {

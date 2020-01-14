@@ -28,7 +28,7 @@ public class DetectionModule : MonoBehaviour
     private void Start()
     {
         m_ActorsManager = FindObjectOfType<ActorsManager>();
-        //DebugUtility.HandleErrorIfNullFindObject<ActorsManager, EnemyController>(m_ActorsManager, this);
+        DebugUtility.HandleErrorIfNullFindObject<ActorsManager, EnemyController>(m_ActorsManager, this);
     }
 
     public void HandleTargetDetection(Actor actor, Collider[] selfColliders)

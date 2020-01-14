@@ -9,10 +9,10 @@ public class FollowPlayer : MonoBehaviour
 
     void Start()
     {
-       // PlayerCharacterController playerCharacterController = GameObject.FindObjectOfType<PlayerCharacterController>();
-        //DebugUtility.HandleErrorIfNullFindObject<PlayerCharacterController, FollowPlayer>(playerCharacterController, this);
+        PlayerCharacterController playerCharacterController = GameObject.FindObjectOfType<PlayerCharacterController>();
+        DebugUtility.HandleErrorIfNullFindObject<PlayerCharacterController, FollowPlayer>(playerCharacterController, this);
 
-       // m_PlayerTransform = playerCharacterController.transform;
+        m_PlayerTransform = playerCharacterController.transform;
 
         m_OriginalOffset = transform.position - m_PlayerTransform.position;
     }

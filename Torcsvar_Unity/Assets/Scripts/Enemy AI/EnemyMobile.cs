@@ -36,7 +36,7 @@ public class EnemyMobile : MonoBehaviour
     void Start()
     {
         m_EnemyController = GetComponent<EnemyController>();
-        //DebugUtility.HandleErrorIfNullGetComponent<EnemyController, EnemyMobile>(m_EnemyController, this, gameObject);
+        DebugUtility.HandleErrorIfNullGetComponent<EnemyController, EnemyMobile>(m_EnemyController, this, gameObject);
 
         m_EnemyController.onAttack += OnAttack;
         m_EnemyController.onDetectedTarget += OnDetectedTarget;
@@ -49,7 +49,7 @@ public class EnemyMobile : MonoBehaviour
 
         // adding a audio source to play the movement sound on it
         m_AudioSource = GetComponent<AudioSource>();
-        //DebugUtility.HandleErrorIfNullGetComponent<AudioSource, EnemyMobile>(m_AudioSource, this, gameObject);
+        DebugUtility.HandleErrorIfNullGetComponent<AudioSource, EnemyMobile>(m_AudioSource, this, gameObject);
         m_AudioSource.clip = MovementSound;
         m_AudioSource.Play();
     }
@@ -139,7 +139,7 @@ public class EnemyMobile : MonoBehaviour
 
         if (onDetectSFX)
         {
-            //AudioUtility.CreateSFX(onDetectSFX, transform.position, AudioUtility.AudioGroups.EnemyDetection, 1f);
+            AudioUtility.CreateSFX(onDetectSFX, transform.position, AudioUtility.AudioGroups.EnemyDetection, 1f);
         }
 
         animator.SetBool(k_AnimAlertedParameter, true);
