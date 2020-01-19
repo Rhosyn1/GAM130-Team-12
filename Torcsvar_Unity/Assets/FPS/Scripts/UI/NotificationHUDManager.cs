@@ -16,7 +16,7 @@ public class NotificationHUDManager : MonoBehaviour
 
         Jetpack jetpack = FindObjectOfType<Jetpack>();
         DebugUtility.HandleErrorIfNullFindObject<Jetpack, NotificationHUDManager>(jetpack, this);
-        jetpack.onUnlockJetpack += OnUnlockJetpack;
+        //jetpack.onUnlockJetpack += OnUnlockJetpack;
     }
 
     void OnUpdateObjective(UnityActionUpdateObjective updateObjective)

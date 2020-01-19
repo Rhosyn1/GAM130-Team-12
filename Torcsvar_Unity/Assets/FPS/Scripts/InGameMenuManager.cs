@@ -46,8 +46,8 @@ public class InGameMenuManager : MonoBehaviour
         invincibilityToggle.isOn = m_PlayerHealth.invincible;
         invincibilityToggle.onValueChanged.AddListener(OnInvincibilityChanged);
 
-        framerateToggle.isOn = m_FramerateCounter.uiText.gameObject.activeSelf;
-        framerateToggle.onValueChanged.AddListener(OnFramerateCounterChanged);
+        /*framerateToggle.isOn = m_FramerateCounter.uiText.gameObject.activeSelf;
+        framerateToggle.onValueChanged.AddListener(OnFramerateCounterChanged);*/
     }
 
     private void Update()
@@ -79,11 +79,11 @@ public class InGameMenuManager : MonoBehaviour
 
         if (Input.GetAxisRaw(GameConstants.k_AxisNameVertical) != 0)
         {
-            if (EventSystem.current.currentSelectedGameObject == null)
+            /*if (EventSystem.current.currentSelectedGameObject == null)
             {
                 EventSystem.current.SetSelectedGameObject(null);
                 lookSensitivitySlider.Select();
-            }
+            }*/
         }
     }
 

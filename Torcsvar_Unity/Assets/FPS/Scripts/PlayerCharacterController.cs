@@ -170,12 +170,12 @@ public class PlayerCharacterController : MonoBehaviour
                 m_Health.TakeDamage(dmgFromFall, null);
 
                 // fall damage SFX
-                audioSource.PlayOneShot(fallDamageSFX);
+                //audioSource.PlayOneShot(fallDamageSFX);
             }
             else
             {
                 // land SFX
-                audioSource.PlayOneShot(landSFX);
+                //audioSource.PlayOneShot(landSFX);
             }
         }
 
@@ -292,7 +292,7 @@ public class PlayerCharacterController : MonoBehaviour
                         characterVelocity += Vector3.up * jumpForce;
 
                         // play sound
-                        audioSource.PlayOneShot(jumpSFX);
+                        //audioSource.PlayOneShot(jumpSFX);
 
                         // remember last time we jumped because we need to prevent snapping to ground for a short time
                         m_LastTimeJumped = Time.time;
@@ -309,7 +309,7 @@ public class PlayerCharacterController : MonoBehaviour
                 if (m_footstepDistanceCounter >= 1f / chosenFootstepSFXFrequency)
                 {
                     m_footstepDistanceCounter = 0f;
-                    audioSource.PlayOneShot(footstepSFX);
+                    //audioSource.PlayOneShot(footstepSFX);
                 }
 
                 // keep track of distance traveled for footsteps sound
