@@ -12,8 +12,13 @@ public class ObjectPickup : MonoBehaviour
     private bool boolKey = false;
 
     public Text pickUpText;
+    public Text pickUpNote;
 
-    //picking up the item after pressing E.
+    public GameObject Note;
+
+    public Canvas canvas;
+
+    //picking up the item (key) after pressing E.
     public void Update()
     {
         //using Raycast to find the key object in front of the camera up to 10m away.
@@ -36,5 +41,33 @@ public class ObjectPickup : MonoBehaviour
             //disabling the text if the key is gone.
             pickUpText.gameObject.SetActive(false);
         }
+        if (Physics.Raycast(playerCamera.transform.position, Vector3.forward, out RaycastHit hit1, 10.0f))
+        {
+            //looking for the tag note.
+            if (hit1.transform.CompareTag("Note"))
+            {
+                //displaying text so that the player knows which key to press.
+                pickUpNote.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    //enabling canvas so that the note displays.
+                    canvas.gameObject.SetActive(true);
+                    pickUpNote.gameObject.SetActive(false);
+                    //press W to disable the canvas.
+                    if (Input.GetKeyDown(KeyCode.W))
+                    {
+                        canvas.gameObject.SetActive(false);
+                    }
+                }
+            }
+
+        }
+        else
+        {
+            canvas.gameObject.SetActive(false);
+            pickUpNote.gameObject.SetActive(false);
+        }
     }
+
+   
 }
