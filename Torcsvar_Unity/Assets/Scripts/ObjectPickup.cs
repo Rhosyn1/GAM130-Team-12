@@ -43,13 +43,17 @@ public class ObjectPickup : MonoBehaviour
         }
         if (Physics.Raycast(playerCamera.transform.position, Vector3.forward, out RaycastHit hit1, 10.0f))
         {
+            //looking for the tag note.
             if (hit1.transform.CompareTag("Note"))
             {
+                //displaying text so that the player knows which key to press.
                 pickUpNote.gameObject.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.F))
                 {
+                    //enabling canvas so that the note displays.
                     canvas.gameObject.SetActive(true);
                     pickUpNote.gameObject.SetActive(false);
+                    //press W to disable the canvas.
                     if (Input.GetKeyDown(KeyCode.W))
                     {
                         canvas.gameObject.SetActive(false);
