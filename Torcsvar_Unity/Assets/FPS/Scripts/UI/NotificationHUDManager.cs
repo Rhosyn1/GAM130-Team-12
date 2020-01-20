@@ -13,10 +13,6 @@ public class NotificationHUDManager : MonoBehaviour
         PlayerWeaponsManager playerWeaponsManager = FindObjectOfType<PlayerWeaponsManager>();
         DebugUtility.HandleErrorIfNullFindObject<PlayerWeaponsManager, NotificationHUDManager>(playerWeaponsManager, this);
         playerWeaponsManager.onAddedWeapon += OnPickupWeapon;
-
-        Jetpack jetpack = FindObjectOfType<Jetpack>();
-        DebugUtility.HandleErrorIfNullFindObject<Jetpack, NotificationHUDManager>(jetpack, this);
-        //jetpack.onUnlockJetpack += OnUnlockJetpack;
     }
 
     void OnUpdateObjective(UnityActionUpdateObjective updateObjective)
@@ -29,11 +25,6 @@ public class NotificationHUDManager : MonoBehaviour
     {
         if (index != 0)
             CreateNotification("Picked up weapon : " + weaponController.weaponName);
-    }
-
-    void OnUnlockJetpack(bool unlock)
-    {
-        CreateNotification("Jetpack unlocked");
     }
 
     public void CreateNotification(string text)

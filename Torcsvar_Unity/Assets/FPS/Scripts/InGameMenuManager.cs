@@ -15,8 +15,6 @@ public class InGameMenuManager : MonoBehaviour
     public Toggle shadowsToggle;
     [Tooltip("Toggle component for invincibility")]
     public Toggle invincibilityToggle;
-    [Tooltip("Toggle component for framerate display")]
-    public Toggle framerateToggle;
     [Tooltip("GameObject for the controls")]
     public GameObject controlImage;
 
@@ -32,9 +30,6 @@ public class InGameMenuManager : MonoBehaviour
         m_PlayerHealth = m_PlayerInputsHandler.GetComponent<Health>();
         DebugUtility.HandleErrorIfNullGetComponent<Health, InGameMenuManager>(m_PlayerHealth, this, gameObject);
 
-        m_FramerateCounter = FindObjectOfType<FramerateCounter>();
-        DebugUtility.HandleErrorIfNullFindObject<FramerateCounter, InGameMenuManager>(m_FramerateCounter, this);
-
         menuRoot.SetActive(false);
 
         lookSensitivitySlider.value = m_PlayerInputsHandler.lookSensitivity;
@@ -45,9 +40,6 @@ public class InGameMenuManager : MonoBehaviour
 
         invincibilityToggle.isOn = m_PlayerHealth.invincible;
         invincibilityToggle.onValueChanged.AddListener(OnInvincibilityChanged);
-
-        /*framerateToggle.isOn = m_FramerateCounter.uiText.gameObject.activeSelf;
-        framerateToggle.onValueChanged.AddListener(OnFramerateCounterChanged);*/
     }
 
     private void Update()
@@ -128,11 +120,6 @@ public class InGameMenuManager : MonoBehaviour
     void OnInvincibilityChanged(bool newValue)
     {
         m_PlayerHealth.invincible = newValue;
-    }
-
-    void OnFramerateCounterChanged(bool newValue)
-    {
-        m_FramerateCounter.uiText.gameObject.SetActive(newValue);
     }
 
     public void OnShowControlButtonClicked(bool show)
