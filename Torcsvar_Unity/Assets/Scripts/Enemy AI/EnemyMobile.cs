@@ -18,12 +18,9 @@ public class EnemyMobile : MonoBehaviour
     [Tooltip("The random hit damage effects")]
     public ParticleSystem[] randomHitSparks;
     public ParticleSystem[] onDetectVFX;
-    public AudioClip onDetectSFX;
 
     [Header("Sound")]
     public AudioClip MovementSound;
-    public MinMaxFloat PitchDistortionMovementSpeed;
-
     public AIState aiState { get; private set; }
     EnemyController m_EnemyController;
     AudioSource m_AudioSource;
@@ -36,7 +33,6 @@ public class EnemyMobile : MonoBehaviour
     void Start()
     {
         m_EnemyController = GetComponent<EnemyController>();
-        DebugUtility.HandleErrorIfNullGetComponent<EnemyController, EnemyMobile>(m_EnemyController, this, gameObject);
 
         m_EnemyController.onAttack += OnAttack;
         m_EnemyController.onDetectedTarget += OnDetectedTarget;
@@ -49,7 +45,6 @@ public class EnemyMobile : MonoBehaviour
 
         // adding a audio source to play the movement sound on it
         m_AudioSource = GetComponent<AudioSource>();
-        DebugUtility.HandleErrorIfNullGetComponent<AudioSource, EnemyMobile>(m_AudioSource, this, gameObject);
         m_AudioSource.clip = MovementSound;
         m_AudioSource.Play();
     }
@@ -63,9 +58,6 @@ public class EnemyMobile : MonoBehaviour
 
         // Update animator speed parameter
         animator.SetFloat(k_AnimMoveSpeedParameter, moveSpeed);
-
-        // changing the pitch of the movement sound depending on the movement speed
-        m_AudioSource.pitch = Mathf.Lerp(PitchDistortionMovementSpeed.min, PitchDistortionMovementSpeed.max, moveSpeed / m_EnemyController.m_NavMeshAgent.speed);
     }
 
     void UpdateAIStateTransitions()
@@ -115,7 +107,6 @@ public class EnemyMobile : MonoBehaviour
                     m_EnemyController.SetNavDestination(transform.position);
                 }
                 m_EnemyController.OrientTowards(m_EnemyController.knownDetectedTarget.transform.position);
-                m_EnemyController.TryAtack((m_EnemyController.knownDetectedTarget.transform.position - m_EnemyController.GetCurrentWeapon().weaponRoot.transform.position).normalized);
                 break;
         }
     }
@@ -135,11 +126,6 @@ public class EnemyMobile : MonoBehaviour
         for (int i = 0; i < onDetectVFX.Length; i++)
         {
             onDetectVFX[i].Play();
-        }
-
-        if (onDetectSFX)
-        {
-            AudioUtility.CreateSFX(onDetectSFX, transform.position, AudioUtility.AudioGroups.EnemyDetection, 1f);
         }
 
         animator.SetBool(k_AnimAlertedParameter, true);

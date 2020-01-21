@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-[RequireComponent(typeof(Health), typeof(Actor), typeof(NavMeshAgent))]
+[RequireComponent(typeof(Actor), typeof(NavMeshAgent))]
 public class EnemyController : MonoBehaviour
 {
     [System.Serializable]
@@ -97,11 +97,9 @@ public class EnemyController : MonoBehaviour
     int m_PathDestinationNodeIndex;
     EnemyManager m_EnemyManager;
     ActorsManager m_ActorsManager;
-    Health m_Health;
     Actor m_Actor;
     Collider[] m_SelfColliders;
     GameFlowManager m_GameFlowManager;
-    bool m_WasDamagedThisFrame;
     WeaponController m_CurrentWeapon;
     WeaponController[] m_Weapons;
     NavigationModule m_NavigationModule;
@@ -109,42 +107,28 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         m_EnemyManager = FindObjectOfType<EnemyManager>();
-        DebugUtility.HandleErrorIfNullFindObject<EnemyManager, EnemyController>(m_EnemyManager, this);
 
         m_ActorsManager = FindObjectOfType<ActorsManager>();
-        DebugUtility.HandleErrorIfNullFindObject<ActorsManager, EnemyController>(m_ActorsManager, this);
 
         m_EnemyManager.RegisterEnemy(this);
 
-        m_Health = GetComponent<Health>();
-        DebugUtility.HandleErrorIfNullGetComponent<Health, EnemyController>(m_Health, this, gameObject);
-
         m_Actor = GetComponent<Actor>();
-        DebugUtility.HandleErrorIfNullGetComponent<Actor, EnemyController>(m_Actor, this, gameObject);
 
         m_NavMeshAgent = GetComponent<NavMeshAgent>();
         m_SelfColliders = GetComponentsInChildren<Collider>();
 
         m_GameFlowManager = FindObjectOfType<GameFlowManager>();
-        DebugUtility.HandleErrorIfNullFindObject<GameFlowManager, EnemyController>(m_GameFlowManager, this);
-
-        // Subscribe to damage & death actions
-        m_Health.onDie += OnDie;
-        m_Health.onDamaged += OnDamaged;
 
         // Find and initialize all weapons
         FindAndInitializeAllWeapons();
 
         var detectionModules = GetComponentsInChildren<DetectionModule>();
-        DebugUtility.HandleErrorIfNoComponentFound<DetectionModule, EnemyController>(detectionModules.Length, this, gameObject);
-        DebugUtility.HandleWarningIfDuplicateObjects<DetectionModule, EnemyController>(detectionModules.Length, this, gameObject);
         // Initialize detection module
         m_DetectionModule = detectionModules[0];
         m_DetectionModule.onDetectedTarget += OnDetectedTarget;
         m_DetectionModule.onLostTarget += OnLostTarget;
 
         var navigationModules = GetComponentsInChildren<NavigationModule>();
-        DebugUtility.HandleWarningIfDuplicateObjects<DetectionModule, EnemyController>(detectionModules.Length, this, gameObject);
         // Override navmesh agent data
         if (navigationModules.Length > 0)
         {
@@ -193,8 +177,6 @@ public class EnemyController : MonoBehaviour
         {
             data.renderer.SetPropertyBlock(m_BodyFlashMaterialPropertyBlock, data.materialIndex);
         }
-
-        m_WasDamagedThisFrame = false;
     }
 
     void EnsureIsWithinLevelBounds()
@@ -327,12 +309,6 @@ public class EnemyController : MonoBehaviour
                 onDamaged.Invoke();
             }
             m_LastTimeDamaged = Time.time;
-
-            // play the damage tick sound
-            if (damageTick && !m_WasDamagedThisFrame)
-                AudioUtility.CreateSFX(damageTick, transform.position, AudioUtility.AudioGroups.DamageTick, 0f);
-
-            m_WasDamagedThisFrame = true;
         }
     }
 
@@ -373,25 +349,6 @@ public class EnemyController : MonoBehaviour
         }
     }
 
-    public bool TryAtack(Vector3 weaponForward)
-    {
-        if (m_GameFlowManager.gameIsEnding)
-            return false;
-
-        // point weapon towards player
-        GetCurrentWeapon().transform.forward = weaponForward;
-
-        // Shoot the weapon
-        bool didFire = GetCurrentWeapon().HandleShootInputs(false, true, false);
-
-        if (didFire && onAttack != null)
-        {
-            onAttack.Invoke();
-        }
-
-        return didFire;
-    }
-
     public bool TryDropItem()
     {
         if (dropRate == 0 || lootPrefab == null)
@@ -408,7 +365,6 @@ public class EnemyController : MonoBehaviour
         if (m_Weapons == null)
         {
             m_Weapons = GetComponentsInChildren<WeaponController>();
-            DebugUtility.HandleErrorIfNoComponentFound<WeaponController, EnemyController>(m_Weapons.Length, this, gameObject);
 
             for (int i = 0; i < m_Weapons.Length; i++)
             {
@@ -426,7 +382,6 @@ public class EnemyController : MonoBehaviour
             // Set the first weapon of the weapons list as the current weapon
             m_CurrentWeapon = m_Weapons[0];
         }
-        DebugUtility.HandleErrorIfNullGetComponent<WeaponController, EnemyController>(m_CurrentWeapon, this, gameObject);
 
         return m_CurrentWeapon;
     }
