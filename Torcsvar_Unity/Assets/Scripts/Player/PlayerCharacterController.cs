@@ -20,20 +20,18 @@ public class PlayerCharacterController : MonoBehaviour
 
     [Header("Movement")]
     [Tooltip("Max movement speed when grounded (when not sprinting)")]
-    public float maxSpeedOnGround = 10f;
+    public float maxSpeedOnGround = 7.5f;
     [Tooltip("Sharpness for the movement when grounded, a low value will make the player accelerate and decelerate slowly, a high value will do the opposite")]
-    public float movementSharpnessOnGround = 15;
+    public float movementSharpnessOnGround = 10f;
     [Tooltip("Max movement speed when crouching")]
     [Range(0,1)]
     public float maxSpeedCrouchedRatio = 0.5f;
     [Tooltip("Max movement speed when not grounded")]
-    public float maxSpeedInAir = 10f;
+    public float maxSpeedInAir = 7.5f;
     [Tooltip("Acceleration speed when in the air")]
     public float accelerationSpeedInAir = 25f;
     [Tooltip("Multiplicator for the sprint speed (based on grounded speed)")]
     public float sprintSpeedModifier = 2f;
-    [Tooltip("Height at which the player dies instantly when falling off the map")]
-    public float killHeight = -50f;
 
     [Header("Rotation")]
     [Tooltip("Rotation speed for moving the camera")]
@@ -70,18 +68,6 @@ public class PlayerCharacterController : MonoBehaviour
     [Tooltip("Sound played when taking damage froma fall")]
     public AudioClip fallDamageSFX;
 
-    [Header("Fall Damage")]
-    [Tooltip("Whether the player will recieve damage when hitting the ground at high speed")]
-    public bool recievesFallDamage;
-    [Tooltip("Minimun fall speed for recieving fall damage")]
-    public float minSpeedForFallDamage = 10f;
-    [Tooltip("Fall speed for recieving th emaximum amount of fall damage")]
-    public float maxSpeedForFallDamage = 30f;
-    [Tooltip("Damage recieved when falling at the mimimum speed")]
-    public float fallDamageAtMinSpeed = 10f;
-    [Tooltip("Damage recieved when falling at the maximum speed")]
-    public float fallDamageAtMaxSpeed = 50f;
-
     public UnityAction<bool> onStanceChanged;
 
     public Vector3 characterVelocity { get; set; }
@@ -89,18 +75,6 @@ public class PlayerCharacterController : MonoBehaviour
     public bool hasJumpedThisFrame { get; private set; }
     public bool isDead { get; private set; }
     public bool isCrouching { get; private set; }
-    public float RotationMultiplier
-    {
-        get
-        {
-            if (m_WeaponsManager.isAiming)
-            {
-                return aimingRotationMultiplier;
-            }
-
-            return 1f;
-        }
-    }
 
     PlayerInputHandler m_InputHandler;
     CharacterController m_Controller;
@@ -206,13 +180,13 @@ public class PlayerCharacterController : MonoBehaviour
         // horizontal character rotation
         {
             // rotate the transform with the input speed around its local Y axis
-            transform.Rotate(new Vector3(0f, (m_InputHandler.GetLookInputsHorizontal() * rotationSpeed * RotationMultiplier), 0f), Space.Self);
+            transform.Rotate(new Vector3(0f, (m_InputHandler.GetLookInputsHorizontal() * rotationSpeed), 0f), Space.Self);
         }
 
         // vertical camera rotation
         {
             // add vertical inputs to the camera's vertical angle
-            m_CameraVerticalAngle += m_InputHandler.GetLookInputsVertical() * rotationSpeed * RotationMultiplier;
+            m_CameraVerticalAngle += m_InputHandler.GetLookInputsVertical() * rotationSpeed;
 
             // limit the camera's vertical angle to min/max
             m_CameraVerticalAngle = Mathf.Clamp(m_CameraVerticalAngle, -89f, 89f);

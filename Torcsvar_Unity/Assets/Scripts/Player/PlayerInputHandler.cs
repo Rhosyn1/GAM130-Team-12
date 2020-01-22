@@ -4,8 +4,6 @@ public class PlayerInputHandler : MonoBehaviour
 {
     [Tooltip("Sensitivity multiplier for moving the camera around")]
     public float lookSensitivity = 1f;
-    [Tooltip("Additional sensitivity multiplier for WebGL")]
-    public float webglLookSensitivityMultiplier = 0.25f;
     [Tooltip("Limit to consider an input when using a trigger on a controller")]
     public float triggerAxisThreshold = 0.4f;
     [Tooltip("Used to flip the vertical input axis")]
@@ -149,50 +147,6 @@ public class PlayerInputHandler : MonoBehaviour
         }
 
         return false;
-    }
-
-    public int GetSwitchWeaponInput()
-    {
-        if (CanProcessInput())
-        {
-
-            bool isGamepad = Input.GetAxis(GameConstants.k_ButtonNameGamepadSwitchWeapon) != 0f;
-            string axisName = isGamepad ? GameConstants.k_ButtonNameGamepadSwitchWeapon : GameConstants.k_ButtonNameSwitchWeapon;
-
-            if (Input.GetAxis(axisName) > 0f)
-                return -1;
-            else if (Input.GetAxis(axisName) < 0f)
-                return 1;
-            else if (Input.GetAxis(GameConstants.k_ButtonNameNextWeapon) > 0f)
-                return -1;
-            else if (Input.GetAxis(GameConstants.k_ButtonNameNextWeapon) < 0f)
-                return 1;
-        }
-
-        return 0;
-    }
-
-    public int GetSelectWeaponInput()
-    {
-        if (CanProcessInput())
-        {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-                return 1;
-            else if (Input.GetKeyDown(KeyCode.Alpha2))
-                return 2;
-            else if (Input.GetKeyDown(KeyCode.Alpha3))
-                return 3;
-            else if (Input.GetKeyDown(KeyCode.Alpha4))
-                return 4;
-            else if (Input.GetKeyDown(KeyCode.Alpha5))
-                return 5;
-            else if (Input.GetKeyDown(KeyCode.Alpha6))
-                return 6;
-            else
-                return 0;
-        }
-
-        return 0;
     }
 
     float GetMouseOrStickLookAxis(string mouseInputName, string stickInputName)
