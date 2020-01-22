@@ -22,8 +22,8 @@ public class ObjectPickup : MonoBehaviour
     //picking up the item (key) after pressing E.
     public void Update()
     {
-        //using Raycast to find the key object in front of the camera up to 10m away.
-        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 10.0f))
+        //using Raycast to find the key object in front of the camera up to 2.5m away.
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 2.5f))
         {
             //if the tag on the object is equal to Key then text appears.
             if (hit.transform.CompareTag("Key"))
