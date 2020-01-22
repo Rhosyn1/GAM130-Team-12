@@ -452,6 +452,11 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1595873365}
+    - target: {fileID: 402082967780299635, guid: 761cdc9e4e883334cbdcea062d0befa7,
+        type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 950231919}
     - target: {fileID: 814417836257332542, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: m_Enabled
@@ -631,7 +636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &950231918
 RectTransform:
   m_ObjectHideFlags: 0
@@ -996,7 +1001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1595873363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,7 +1069,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595873362}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
@@ -1074,7 +1079,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &1595873368
@@ -1252,6 +1257,26 @@ PrefabInstance:
     - target: {fileID: 7849686967222735643, guid: 9518bb49a4e1c6c45b46f8701d1d78e7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008513766753475529, guid: 9518bb49a4e1c6c45b46f8701d1d78e7,
+        type: 3}
+      propertyPath: m_Text
+      value: Press E to view note
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021821519239114170, guid: 9518bb49a4e1c6c45b46f8701d1d78e7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2207384143609538688, guid: 9518bb49a4e1c6c45b46f8701d1d78e7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796729275110153672, guid: 9518bb49a4e1c6c45b46f8701d1d78e7,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

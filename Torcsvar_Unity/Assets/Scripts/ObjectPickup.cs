@@ -16,13 +16,14 @@ public class ObjectPickup : MonoBehaviour
 
     public GameObject Note;
 
-    public Canvas canvas;
+    public Image image;
+
 
     //picking up the item (key) after pressing E.
     public void Update()
     {
         //using Raycast to find the key object in front of the camera up to 10m away.
-        if (Physics.Raycast(playerCamera.transform.position, Vector3.forward, out RaycastHit hit, 10.0f))
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 10.0f))
         {
             //if the tag on the object is equal to Key then text appears.
             if (hit.transform.CompareTag("Key"))
@@ -35,39 +36,42 @@ public class ObjectPickup : MonoBehaviour
                     Destroy(hit.transform.gameObject);
                 }
             }
-        }
-        else
-        {
-            //disabling the text if the key is gone.
-            pickUpText.gameObject.SetActive(false);
-        }
-        if (Physics.Raycast(playerCamera.transform.position, Vector3.forward, out RaycastHit hit1, 10.0f))
-        {
+            else
+            {
+                pickUpText.gameObject.SetActive(false);
+            }
             //looking for the tag note.
-            if (hit1.transform.CompareTag("Note"))
+            if (hit.transform.CompareTag("Note"))
             {
                 //displaying text so that the player knows which key to press.
-                pickUpNote.gameObject.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.F))
+                if (!image.gameObject.activeSelf)
+                {
+                    pickUpNote.gameObject.SetActive(true);
+                }
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     //enabling canvas so that the note displays.
-                    canvas.gameObject.SetActive(true);
-                    pickUpNote.gameObject.SetActive(false);
-                    //press W to disable the canvas.
-                    if (Input.GetKeyDown(KeyCode.W))
+                    //press E to enable/disable the note image.
+                    if (!image.gameObject.activeSelf)
                     {
-                        canvas.gameObject.SetActive(false);
+                        image.gameObject.SetActive(true);
+                        pickUpNote.gameObject.SetActive(false);
+                    }
+                    else if(image.gameObject.activeSelf)
+                    {
+                        image.gameObject.SetActive(false);
                     }
                 }
             }
-
+            else
+            {
+                pickUpNote.gameObject.SetActive(false);
+            }
         }
         else
         {
-            canvas.gameObject.SetActive(false);
             pickUpNote.gameObject.SetActive(false);
+            pickUpText.gameObject.SetActive(false);
         }
     }
-
-   
 }
