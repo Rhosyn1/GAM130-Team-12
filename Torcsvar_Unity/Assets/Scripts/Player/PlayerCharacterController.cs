@@ -20,7 +20,7 @@ public class PlayerCharacterController : MonoBehaviour
 
     [Header("Movement")]
     [Tooltip("Max movement speed when grounded (when not sprinting)")]
-    public float maxSpeedOnGround = 7.5f;
+    public float maxSpeedOnGround = 6f;
     [Tooltip("Sharpness for the movement when grounded, a low value will make the player accelerate and decelerate slowly, a high value will do the opposite")]
     public float movementSharpnessOnGround = 10f;
     [Tooltip("Max movement speed when crouching")]
@@ -31,7 +31,7 @@ public class PlayerCharacterController : MonoBehaviour
     [Tooltip("Acceleration speed when in the air")]
     public float accelerationSpeedInAir = 25f;
     [Tooltip("Multiplicator for the sprint speed (based on grounded speed)")]
-    public float sprintSpeedModifier = 2f;
+    public float sprintSpeedModifier = 1.25f;
 
     [Header("Rotation")]
     [Tooltip("Rotation speed for moving the camera")]
@@ -87,6 +87,10 @@ public class PlayerCharacterController : MonoBehaviour
     float m_CameraVerticalAngle = 0f;
     float m_footstepDistanceCounter;
     float m_TargetCharacterHeight;
+    float stamina = 5;
+    float maxStamina = 5;
+    bool canSprint = true;
+    bool isSprinting = false;
 
     const float k_JumpGroundingPreventionTime = 0.2f;
     const float k_GroundCheckDistanceInAir = 0.07f;
@@ -133,6 +137,7 @@ public class PlayerCharacterController : MonoBehaviour
         UpdateCharacterHeight(false);
 
         HandleCharacterMovement();
+
     }
 
     void OnDie()
@@ -196,12 +201,39 @@ public class PlayerCharacterController : MonoBehaviour
         }
 
         // character movement handling
-        bool isSprinting = m_InputHandler.GetSprintInputHeld();
         {
+            //isSprinting only becomes true if the player can sprint
+            if (canSprint == true)
+            {
+                isSprinting = m_InputHandler.GetSprintInputHeld();
+            }
+            //Stamina increases over time when the player can't sprint
+            else
+            {
+                stamina += Time.deltaTime;
+            }
+
+            //The player will stop crouching upon sprinting, and stamina will decrease while sprinting
             if (isSprinting)
             {
                 isSprinting = SetCrouchingState(false, false);
+                stamina -= Time.deltaTime;
             }
+
+            //Stops the player from sprinting and removes the ability to sprint upon running out of stamina
+            if (stamina <= 0)
+            {
+                canSprint = false;
+                isSprinting = false;
+            }
+
+            //The player can sprint again once stamina is refilled
+            if (stamina > maxStamina)
+            {
+                stamina = maxStamina;
+                canSprint = true;
+            }
+            
 
             float speedModifier = isSprinting ? sprintSpeedModifier : 1f;
 
