@@ -209,7 +209,7 @@ Projector:
   m_AspectRatio: 1
   m_Orthographic: 1
   m_OrthographicSize: 0.7
-  m_Material: {fileID: 2100000, guid: 700c8e4508ea3b34999c1917db3d4424, type: 2}
+  m_Material: {fileID: 0}
   m_IgnoreLayers:
     serializedVersion: 2
     m_Bits: 512
@@ -318,11 +318,8 @@ GameObject:
   - component: {fileID: 8746678193447392789}
   - component: {fileID: 6145509692674227223}
   - component: {fileID: 814417836257332542}
-  - component: {fileID: 1360575517897679518}
-  - component: {fileID: 298744117520805562}
   - component: {fileID: 3122855503829242450}
   - component: {fileID: 6268538116984687401}
-  - component: {fileID: 4205022973215787166}
   - component: {fileID: 402082967780299635}
   - component: {fileID: 1272397862697293493}
   - component: {fileID: 1661717823}
@@ -364,7 +361,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookSensitivity: 1
-  webglLookSensitivityMultiplier: 0.25
   triggerAxisThreshold: 0.4
   invertYAxis: 0
   invertXAxis: 0
@@ -393,7 +389,6 @@ MonoBehaviour:
   maxSpeedInAir: 10
   accelerationSpeedInAir: 25
   sprintSpeedModifier: 1.5
-  killHeight: -50
   rotationSpeed: 200
   aimingRotationMultiplier: 0.4
   jumpForce: 9
@@ -407,57 +402,6 @@ MonoBehaviour:
   jumpSFX: {fileID: 8300000, guid: 13b59a14d34add64d84a623867546ff1, type: 3}
   landSFX: {fileID: 8300000, guid: d0f1afed8fa916244af6ca73579ded67, type: 3}
   fallDamageSFX: {fileID: 8300000, guid: ef980d09b569380459e609fe90ef1db2, type: 3}
-  recievesFallDamage: 1
-  minSpeedForFallDamage: 20
-  maxSpeedForFallDamage: 40
-  fallDamageAtMinSpeed: 10
-  fallDamageAtMaxSpeed: 30
---- !u!114 &1360575517897679518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7253983127304857660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e27364eefd6dd0341ba72a3bfc0d9727, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  criticalHealthRatio: 0.3
---- !u!114 &298744117520805562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7253983127304857660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6b4f98e62f1d104f8658bba08e5d56f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingWeapons: []
-  weaponCamera: {fileID: 2286125971047457827}
-  weaponParentSocket: {fileID: 3891163784698469781}
-  defaultWeaponPosition: {fileID: 4354021110288562838}
-  aimingWeaponPosition: {fileID: 6033319682454824337}
-  downWeaponPosition: {fileID: 2050759424792167117}
-  bobFrequency: 10
-  bobSharpness: 10
-  defaultBobAmount: 0.05
-  aimingBobAmount: 0.02
-  recoilSharpness: 50
-  maxRecoilDistance: 0.2
-  recoilRestitutionSharpness: 10
-  aimingAnimationSpeed: 14
-  defaultFOV: 60
-  weaponFOVMultiplier: 1
-  weaponSwitchDelay: 0.2
-  FPSWeaponLayer:
-    serializedVersion: 2
-    m_Bits: 1024
 --- !u!143 &3122855503829242450
 CharacterController:
   m_ObjectHideFlags: 0
@@ -490,20 +434,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affiliation: 1
   aimPoint: {fileID: 3625601170703586302}
---- !u!114 &4205022973215787166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7253983127304857660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9b0ce1bb69c96b49a7ac1098a7f5796, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damageMultiplier: 1
-  sensibilityToSelfdamage: 0.25
 --- !u!114 &402082967780299635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,7 +446,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27b65af4494aef49966817dc78ed5dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Key: {fileID: 0}
+  playerCamera: {fileID: 0}
+  pickUpText: {fileID: 0}
+  pickUpNote: {fileID: 0}
+  Note: {fileID: 0}
+  image: {fileID: 0}
 --- !u!82 &1272397862697293493
 AudioSource:
   m_ObjectHideFlags: 0
@@ -526,8 +460,7 @@ AudioSource:
   m_GameObject: {fileID: 7253983127304857660}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243893235630832048, guid: fcc71635aab95ff4fbdf1880bf2afa2f,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -623,8 +556,7 @@ AudioSource:
   m_GameObject: {fileID: 7253983127304857660}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 243216109797877232, guid: fcc71635aab95ff4fbdf1880bf2afa2f,
-    type: 2}
+  OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 01a15bd1861d7914abbedc36aad1f4d6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1

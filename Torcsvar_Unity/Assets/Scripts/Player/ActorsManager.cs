@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿/*using System.Collections.Generic;
 using UnityEngine;
 
 public class ActorsManager : MonoBehaviour
@@ -10,3 +10,4 @@ public class ActorsManager : MonoBehaviour
         actors = new List<Actor>();
     }
 }
+*/

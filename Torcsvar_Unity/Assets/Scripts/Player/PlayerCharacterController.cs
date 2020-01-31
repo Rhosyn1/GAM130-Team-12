@@ -20,7 +20,7 @@ public class PlayerCharacterController : MonoBehaviour
 
     [Header("Movement")]
     [Tooltip("Max movement speed when grounded (when not sprinting)")]
-    public float maxSpeedOnGround = 6f;
+    public float maxSpeedOnGround = 5f;
     [Tooltip("Sharpness for the movement when grounded, a low value will make the player accelerate and decelerate slowly, a high value will do the opposite")]
     public float movementSharpnessOnGround = 10f;
     [Tooltip("Max movement speed when crouching")]
@@ -31,7 +31,7 @@ public class PlayerCharacterController : MonoBehaviour
     [Tooltip("Acceleration speed when in the air")]
     public float accelerationSpeedInAir = 25f;
     [Tooltip("Multiplicator for the sprint speed (based on grounded speed)")]
-    public float sprintSpeedModifier = 1.25f;
+    public float sprintSpeedModifier = 1.7f;
 
     [Header("Rotation")]
     [Tooltip("Rotation speed for moving the camera")]
@@ -78,8 +78,7 @@ public class PlayerCharacterController : MonoBehaviour
 
     PlayerInputHandler m_InputHandler;
     CharacterController m_Controller;
-    PlayerWeaponsManager m_WeaponsManager;
-    Actor m_Actor;
+    Transform playerAimPoint;
     Vector3 m_GroundNormal;
     Vector3 m_CharacterVelocity;
     Vector3 m_LatestImpactSpeed;
@@ -87,8 +86,8 @@ public class PlayerCharacterController : MonoBehaviour
     float m_CameraVerticalAngle = 0f;
     float m_footstepDistanceCounter;
     float m_TargetCharacterHeight;
-    float stamina = 5;
-    float maxStamina = 5;
+    float stamina = 4;
+    float maxStamina = 4;
     bool canSprint = true;
     bool isSprinting = false;
 
@@ -102,9 +101,7 @@ public class PlayerCharacterController : MonoBehaviour
 
         m_InputHandler = GetComponent<PlayerInputHandler>();
 
-        m_WeaponsManager = GetComponent<PlayerWeaponsManager>();
-
-        m_Actor = GetComponent<Actor>();
+        playerAimPoint = transform.Find("AimPoint");
 
         m_Controller.enableOverlapRecovery = true;
 
@@ -355,7 +352,8 @@ public class PlayerCharacterController : MonoBehaviour
             m_Controller.height = m_TargetCharacterHeight;
             m_Controller.center = Vector3.up * m_Controller.height * 0.5f;
             playerCamera.transform.localPosition = Vector3.up * m_TargetCharacterHeight * cameraHeightRatio;
-            m_Actor.aimPoint.transform.localPosition = m_Controller.center;
+            playerAimPoint.transform.localPosition = m_Controller.center;
+            
         }
         // Update smooth height
         else if (m_Controller.height != m_TargetCharacterHeight)
@@ -364,7 +362,7 @@ public class PlayerCharacterController : MonoBehaviour
             m_Controller.height = Mathf.Lerp(m_Controller.height, m_TargetCharacterHeight, crouchingSharpness * Time.deltaTime);
             m_Controller.center = Vector3.up * m_Controller.height * 0.5f;
             playerCamera.transform.localPosition = Vector3.Lerp(playerCamera.transform.localPosition, Vector3.up * m_TargetCharacterHeight * cameraHeightRatio, crouchingSharpness * Time.deltaTime);
-            m_Actor.aimPoint.transform.localPosition = m_Controller.center;
+            playerAimPoint.transform.localPosition = m_Controller.center;
         }
     }
 
