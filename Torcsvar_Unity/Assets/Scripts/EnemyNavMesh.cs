@@ -48,9 +48,10 @@ public class EnemyNavMesh : MonoBehaviour
                 }
             }
         }
-        else
+
+        if (Vector3.Distance(transform.position, target.transform.position) <= 10f)
         {
-            agent.SetDestination(target.position);
+            agent.SetDestination(target.transform.position);
         }
     }
 }
