@@ -8,7 +8,9 @@ public class EnemyNavMesh : MonoBehaviour
     public Transform target;
     private NavMeshAgent agent;
 
-    public EnemyPatrolPath patrolPath;
+    public List<Vector3> patrol;
+
+    private EnemyPatrolPath patrolPath;
 
     private EnemyPatrolPath currentPatrol;
     private int currentPoint;
@@ -16,13 +18,7 @@ public class EnemyNavMesh : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentPatrol = new EnemyPatrolPath(new List<Vector3>()
-        {
-            new Vector3(20, 1, 44),
-            new Vector3(20, 1, -1),
-            new Vector3(-9, 1, -1),
-            new Vector3(-9, 1, 44)
-        });
+        patrolPath = new EnemyPatrolPath(patrol);
 
         agent = GetComponent<NavMeshAgent>();
         if (patrolPath != null)
