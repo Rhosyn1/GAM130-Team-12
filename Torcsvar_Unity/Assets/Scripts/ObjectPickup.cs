@@ -9,7 +9,8 @@ public class ObjectPickup : MonoBehaviour
 
     public GameObject playerCamera;
 
-    private bool boolKey = false;
+    private int countKeys;
+
 
     public Text pickUpText;
     public Text pickUpNote;
@@ -32,7 +33,7 @@ public class ObjectPickup : MonoBehaviour
                 //if E is pressed then object is destroyed and the bool is turned to true.
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    boolKey = true;
+                    countKeys++;
                     Destroy(hit.transform.gameObject);
                 }
             }
