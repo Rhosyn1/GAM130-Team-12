@@ -1,26 +1,25 @@
 fileFormatVersion: 2
-guid: c5de489fd87c00e47849c3e790d6f4e5
+guid: 708b6713512dcf643989f11db56b6b13
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: tunnel_quad_intersection_4x4
-    100004: tunnel_quad_intersection_4x4_collision
+    100002: tunnel_corner_4x4
+    100004: tunnel_corner_4x4_collision
     400000: //RootNode
-    400002: tunnel_quad_intersection_4x4
-    400004: tunnel_quad_intersection_4x4_collision
-    2100000: lambert1
-    2100002: lambert2
-    2100004: lambert7
+    400002: tunnel_corner_4x4
+    400004: tunnel_corner_4x4_collision
+    2100000: lambert2
+    2100002: lambert1
+    2100004: lambert4
     2300000: //RootNode
-    2300002: tunnel_quad_intersection_4x4
-    2300004: tunnel_quad_intersection_4x4_collision
+    2300002: tunnel_corner_4x4
+    2300004: tunnel_corner_4x4_collision
     3300000: //RootNode
-    3300002: tunnel_quad_intersection_4x4
-    3300004: tunnel_quad_intersection_4x4_collision
-    4300000: tunnel_quad_intersection_4x4
-    4300002: tunnel_tri_intersection_4x4
-    4300004: tunnel_quad_intersection_4x4_collision
+    3300002: tunnel_corner_4x4
+    3300004: tunnel_corner_4x4_collision
+    4300000: tunnel_corner_4x4
+    4300002: tunnel_corner_4x4_collision
   externalObjects: {}
   materials:
     importMaterials: 1

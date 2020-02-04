@@ -4,11 +4,22 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: tunnel_straight_4x4x4
+    100004: tunnel_straight_4x4x4_collision
     400000: //RootNode
+    400002: tunnel_straight_4x4x4
+    400004: tunnel_straight_4x4x4_collision
     2100000: lambert1
+    2100002: lambert5
+    2100004: lambert6
     2300000: //RootNode
+    2300002: tunnel_straight_4x4x4
+    2300004: tunnel_straight_4x4x4_collision
     3300000: //RootNode
+    3300002: tunnel_straight_4x4x4
+    3300004: tunnel_straight_4x4x4_collision
     4300000: tunnel_straight_4x4x4
+    4300002: tunnel_straight_4x4x4_collision
   externalObjects: {}
   materials:
     importMaterials: 1
