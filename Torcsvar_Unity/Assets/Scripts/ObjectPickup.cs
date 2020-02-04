@@ -9,7 +9,7 @@ public class ObjectPickup : MonoBehaviour
 
     public GameObject playerCamera;
 
-    private int countKeys;
+    public int countKeys;
 
 
     public Text pickUpText;
