@@ -51,7 +51,5 @@ public class EnemyNavMesh : MonoBehaviour
         {
             agent.SetDestination(target.transform.position);
         }
-
-
     }
 }

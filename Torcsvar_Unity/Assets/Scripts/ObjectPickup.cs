@@ -68,6 +68,14 @@ public class ObjectPickup : MonoBehaviour
             {
                 pickUpNote.gameObject.SetActive(false);
             }
+
+            if (hit.transform.CompareTag("Door"))
+            {
+                if (countKeys == 5)
+                {
+                    Debug.Log("Door Opened");
+                }
+            }
         }
         else
         {
