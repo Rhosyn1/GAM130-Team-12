@@ -2831,6 +2831,11 @@ PrefabInstance:
       propertyPath: sprintSpeedModifier
       value: 1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 814417836257332542, guid: 761cdc9e4e883334cbdcea062d0befa7,
+        type: 3}
+      propertyPath: jumpForce
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 402082967780299635, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: Key
