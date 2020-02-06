@@ -50,6 +50,6 @@ public class EnemyNavMesh : MonoBehaviour
         if (Vector3.Distance(transform.position, target.transform.position) <= 10f)
         {
             agent.SetDestination(target.transform.position);
-        }
+        }    
     }
 }

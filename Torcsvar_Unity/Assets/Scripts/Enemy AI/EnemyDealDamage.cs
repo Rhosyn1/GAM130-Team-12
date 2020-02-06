@@ -7,15 +7,10 @@ public class EnemyDealDamage : MonoBehaviour
 {
     public int playerHealth;
     public GameObject playerObject;
-    // Start is called before the first frame update
-    void Start()
-    {
-  
-    }
 
-    // Update is called once per frame
     void Update()
     {
+        //dealing damage to player health, if player dies then new scene is loaded.
         if (Vector3.Distance(transform.position, playerObject.transform.position) <= 2f)
         {
             playerHealth--;
@@ -25,4 +20,6 @@ public class EnemyDealDamage : MonoBehaviour
             }
         }
     }
+
+
 }

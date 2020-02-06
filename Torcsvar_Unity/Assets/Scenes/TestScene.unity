@@ -2096,8 +2096,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2701333609635381389, guid: a4e431024aa94dd4a93f58677f399f58,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4558996236196804808, guid: a4e431024aa94dd4a93f58677f399f58, type: 3}
+    - {fileID: 2701333609635381389, guid: a4e431024aa94dd4a93f58677f399f58, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a4e431024aa94dd4a93f58677f399f58, type: 3}
 --- !u!43 &173712870
 Mesh:
@@ -7124,28 +7130,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &809866322 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7769683861192650739, guid: a4e431024aa94dd4a93f58677f399f58,
-    type: 3}
-  m_PrefabInstance: {fileID: 953363178}
-  m_PrefabAsset: {fileID: 0}
---- !u!208 &809866323
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809866322}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!1001 &837176564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7561,28 +7545,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &914698439 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7769683861192650739, guid: a4e431024aa94dd4a93f58677f399f58,
-    type: 3}
-  m_PrefabInstance: {fileID: 1791517933}
-  m_PrefabAsset: {fileID: 0}
---- !u!208 &914698440
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914698439}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!43 &939454190
 Mesh:
   m_ObjectHideFlags: 0
@@ -8888,6 +8850,16 @@ PrefabInstance:
       propertyPath: playerObject
       value: 
       objectReference: {fileID: 2142613857}
+    - target: {fileID: 8186833038965632551, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: playerHealth
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8186833038965632551, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: playerObject
+      value: 
+      objectReference: {fileID: 2142613857}
     - target: {fileID: 49044523822143003, guid: 10dfecadb2a5be542a88fee65bacc859,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8948,6 +8920,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 2142613867}
+    - target: {fileID: 3404666649905144021, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: m_Speed
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1353216985546190492, guid: 10dfecadb2a5be542a88fee65bacc859, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 10dfecadb2a5be542a88fee65bacc859, type: 3}
@@ -9111,28 +9088,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &1049431104 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7769683861192650739, guid: a4e431024aa94dd4a93f58677f399f58,
-    type: 3}
-  m_PrefabInstance: {fileID: 2038644681}
-  m_PrefabAsset: {fileID: 0}
---- !u!208 &1049431105
-NavMeshObstacle:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1049431104}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Shape: 1
-  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
-  m_MoveThreshold: 0.1
-  m_Carve: 0
-  m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
 --- !u!43 &1092709624
 Mesh:
   m_ObjectHideFlags: 0
@@ -9469,7 +9424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1119360899
 Light:
   m_ObjectHideFlags: 0
@@ -15134,7 +15089,7 @@ PrefabInstance:
     - target: {fileID: 2813285545701283420, guid: 9afcbba134a9948448d39991999dd904,
         type: 3}
       propertyPath: m_Name
-      value: Sphere
+      value: Note
       objectReference: {fileID: 0}
     - target: {fileID: 2813285545701283416, guid: 9afcbba134a9948448d39991999dd904,
         type: 3}
@@ -15191,7 +15146,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8162220902431000700, guid: 9afcbba134a9948448d39991999dd904, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9afcbba134a9948448d39991999dd904, type: 3}
 --- !u!1001 &4823131351393743953
 PrefabInstance:

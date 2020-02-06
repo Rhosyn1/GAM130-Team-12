@@ -58,17 +58,30 @@ public class ObjectPickup : MonoBehaviour
                         image.gameObject.SetActive(true);
                         pickUpNote.gameObject.SetActive(false);
                     }
-                    else if(image.gameObject.activeSelf)
+                    else if (image.gameObject.activeSelf)
                     {
                         image.gameObject.SetActive(false);
                     }
+                    else if (image.gameObject.activeSelf == true)
+                    {
+                        if (Vector3.Distance(playerCamera.transform.position, Note.transform.position) >= 3f)
+                        {
+                            image.gameObject.SetActive(false);
+                        }                      
+                    }
+
+ 
                 }
             }
+            //sets image and note text to inactive
             else
             {
                 pickUpNote.gameObject.SetActive(false);
+                image.gameObject.SetActive(false);
             }
 
+            
+            //if all 5 keys have been collected then door opens.
             if (hit.transform.CompareTag("Door"))
             {
                 if (countKeys == 5)
