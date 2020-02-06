@@ -62,15 +62,12 @@ public class ObjectPickup : MonoBehaviour
                     {
                         image.gameObject.SetActive(false);
                     }
-                    else if (image.gameObject.activeSelf == true)
+                    else if (Vector3.Distance(playerCamera.transform.position, Note.transform.position) >= 3f)
                     {
-                        if (Vector3.Distance(playerCamera.transform.position, Note.transform.position) >= 3f)
-                        {
-                            image.gameObject.SetActive(false);
-                        }                      
-                    }
-
- 
+                        Debug.Log("Note disabling");
+                        image.gameObject.SetActive(false);
+                    }                      
+                    
                 }
             }
             //sets image and note text to inactive
