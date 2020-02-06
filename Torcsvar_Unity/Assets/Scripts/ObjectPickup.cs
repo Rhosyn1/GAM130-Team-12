@@ -58,7 +58,7 @@ public class ObjectPickup : MonoBehaviour
                         image.gameObject.SetActive(true);
                         pickUpNote.gameObject.SetActive(false);
                     }
-                    else if(image.gameObject.activeSelf)
+                    else if (image.gameObject.activeSelf)
                     {
                         image.gameObject.SetActive(false);
                     }
@@ -67,8 +67,9 @@ public class ObjectPickup : MonoBehaviour
             else
             {
                 pickUpNote.gameObject.SetActive(false);
+                image.gameObject.SetActive(false);
             }
-
+         
             if (hit.transform.CompareTag("Door"))
             {
                 if (countKeys == 5)
