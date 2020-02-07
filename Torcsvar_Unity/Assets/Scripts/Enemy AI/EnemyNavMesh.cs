@@ -52,5 +52,10 @@ public class EnemyNavMesh : MonoBehaviour
         {
             agent.SetDestination(target.transform.position);
         }
+
+        if (agent.hasPath)
+        {
+            Debug.Log("has path");
+        }
     }
 }
