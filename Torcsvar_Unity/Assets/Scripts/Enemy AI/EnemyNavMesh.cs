@@ -15,6 +15,7 @@ public class EnemyNavMesh : MonoBehaviour
     private EnemyPatrolPath currentPatrol;
     private int currentPoint;
 
+    public WindowScript windowSmashed;
     //setting the current point to 0 if path is null.
     void Start()
     {
@@ -50,6 +51,6 @@ public class EnemyNavMesh : MonoBehaviour
         if (Vector3.Distance(transform.position, target.transform.position) <= 10f)
         {
             agent.SetDestination(target.transform.position);
-        }    
+        }
     }
 }
