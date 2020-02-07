@@ -62,11 +62,6 @@ public class ObjectPickup : MonoBehaviour
                     {
                         image.gameObject.SetActive(false);
                     }
-                    else if (Vector3.Distance(playerCamera.transform.position, Note.transform.position) >= 3f)
-                    {
-                        Debug.Log("Note disabling");
-                        image.gameObject.SetActive(false);
-                    }                      
                     
                 }
             }
@@ -77,6 +72,10 @@ public class ObjectPickup : MonoBehaviour
                 image.gameObject.SetActive(false);
             }
 
+            if (Vector3.Distance(playerCamera.transform.position, playerCamera.transform.forward) >= 3f)
+            {
+                image.gameObject.SetActive(false);
+            }                      
             
             //if all 5 keys have been collected then door opens.
             if (hit.transform.CompareTag("Door"))
