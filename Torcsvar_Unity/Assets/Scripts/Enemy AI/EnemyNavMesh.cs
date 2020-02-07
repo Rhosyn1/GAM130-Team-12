@@ -21,7 +21,7 @@ public class EnemyNavMesh : MonoBehaviour
     {
         patrolPath = new EnemyPatrolPath(patrol);
 
-        agent = GetComponent<NavMeshAgent>();
+        agent = transform.GetComponent<NavMeshAgent>();
         if (patrolPath != null)
         {
             currentPatrol = patrolPath;
@@ -53,9 +53,16 @@ public class EnemyNavMesh : MonoBehaviour
             agent.SetDestination(target.transform.position);
         }
 
-        if (agent.hasPath)
+
+        if (agent.velocity != Vector3.zero)
         {
-            Debug.Log("has path");
+            Debug.Log("enemy moving");
         }
+        else
+        {
+            Debug.Log("stopped moving");
+            //agent.SetDestination();
+        }
+        
     }
 }
