@@ -7,6 +7,8 @@ TagManager:
   - Key
   - Note
   - Door
+  - Enemy
+  - GameManager
   layers:
   - Default
   - TransparentFX
