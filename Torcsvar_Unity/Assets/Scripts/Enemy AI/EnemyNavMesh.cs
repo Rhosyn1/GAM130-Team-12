@@ -52,17 +52,5 @@ public class EnemyNavMesh : MonoBehaviour
         {
             agent.SetDestination(target.transform.position);
         }
-
-
-        if (agent.velocity != Vector3.zero)
-        {
-            Debug.Log("enemy moving");
-        }
-        else
-        {
-            Debug.Log("stopped moving");
-            //agent.SetDestination();
-        }
-        
     }
 }
