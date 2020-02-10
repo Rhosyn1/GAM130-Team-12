@@ -21,7 +21,7 @@ public class EnemyNavMesh : MonoBehaviour
     {
         patrolPath = new EnemyPatrolPath(patrol);
 
-        agent = GetComponent<NavMeshAgent>();
+        agent = transform.GetComponent<NavMeshAgent>();
         if (patrolPath != null)
         {
             currentPatrol = patrolPath;
