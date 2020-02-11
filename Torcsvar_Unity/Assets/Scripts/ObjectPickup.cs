@@ -19,6 +19,8 @@ public class ObjectPickup : MonoBehaviour
 
     public Image image;
 
+    public GameObject roomDoor;
+
 
     //picking up the item (key) after pressing E.
     public void Update()
@@ -82,7 +84,7 @@ public class ObjectPickup : MonoBehaviour
             {
                 if (countKeys == 5)
                 {
-                    Debug.Log("Door Opened");
+                    Destroy(roomDoor);
                 }
             }
         }
