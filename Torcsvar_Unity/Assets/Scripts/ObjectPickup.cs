@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ObjectPickup : MonoBehaviour
 {
@@ -86,6 +87,15 @@ public class ObjectPickup : MonoBehaviour
                 {
                     Destroy(roomDoor);
                     Destroy(hit.transform.gameObject);
+                }
+            }
+
+            if (hit.transform.CompareTag("Heart"))
+            {
+                pickUpText.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    SceneManager.LoadScene(2);
                 }
             }
         }
