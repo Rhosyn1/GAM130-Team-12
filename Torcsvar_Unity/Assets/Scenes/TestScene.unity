@@ -3630,7 +3630,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2
   m_Range: 20
   m_SpotAngle: 90
   m_CookieSize: 10
@@ -8918,6 +8918,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
         type: 3}
+      propertyPath: patrol.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 2142613867}
@@ -8926,6 +8931,96 @@ PrefabInstance:
       propertyPath: windowSmashed
       value: 
       objectReference: {fileID: 1604643788}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[4].x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[4].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[4].z
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[5].x
+      value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[5].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[5].z
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[6].x
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[6].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[6].z
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[7].x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[7].y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[7].z
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[0].z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[1].x
+      value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[2].x
+      value: -17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[2].z
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[3].x
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4263500785934360165, guid: 10dfecadb2a5be542a88fee65bacc859,
+        type: 3}
+      propertyPath: patrol.Array.data[3].z
+      value: 56
+      objectReference: {fileID: 0}
     - target: {fileID: 3404666649905144021, guid: 10dfecadb2a5be542a88fee65bacc859,
         type: 3}
       propertyPath: m_Speed

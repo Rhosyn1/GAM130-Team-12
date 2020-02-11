@@ -8,12 +8,6 @@ public class WindowBreaking : MonoBehaviour
     public GameObject playerCamera;
     public Text uiText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
