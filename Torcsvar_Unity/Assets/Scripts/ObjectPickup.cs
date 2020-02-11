@@ -85,6 +85,7 @@ public class ObjectPickup : MonoBehaviour
                 if (countKeys == 5)
                 {
                     Destroy(roomDoor);
+                    Destroy(hit.transform.gameObject);
                 }
             }
         }
