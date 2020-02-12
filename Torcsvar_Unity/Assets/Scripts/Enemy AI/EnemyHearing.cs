@@ -37,7 +37,8 @@ public class EnemyHearing : MonoBehaviour
 
         if (playerHeard)
         {
-            this.gameObject.GetComponent<EnemyNavMesh>().Update();
+            //this.gameObject.GetComponent<EnemyNavMesh>().Update();
+            throw new System.NotImplementedException();
         }
     }
 }
