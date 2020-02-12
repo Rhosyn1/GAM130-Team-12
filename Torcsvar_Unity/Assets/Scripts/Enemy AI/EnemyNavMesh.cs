@@ -30,7 +30,7 @@ public class EnemyNavMesh : MonoBehaviour
     }
 
    
-    void Update()
+    public void Update()
     {
         //setting points for enemy
         if (currentPatrol != null)

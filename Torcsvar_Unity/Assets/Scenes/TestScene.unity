@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.135
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.16276017, g: 0.18439564, b: 0.21843493, a: 0.135}
+  m_IndirectSpecularColor: {r: 0.16276011, g: 0.18439546, b: 0.21843469, a: 0.135}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6016,16 +6016,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: testRoom
       objectReference: {fileID: 0}
-    - target: {fileID: 7408151555992507110, guid: 855dfe70f23a41d49b95dcc0abafd525,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 1041938821}
-    - target: {fileID: 7408151555992507105, guid: 855dfe70f23a41d49b95dcc0abafd525,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 1041938821}
     - target: {fileID: 7408151555992507109, guid: 855dfe70f23a41d49b95dcc0abafd525,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6081,6 +6071,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7408151555992507110, guid: 855dfe70f23a41d49b95dcc0abafd525,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1041938821}
+    - target: {fileID: 7408151555992507105, guid: 855dfe70f23a41d49b95dcc0abafd525,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1041938821}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 855dfe70f23a41d49b95dcc0abafd525, type: 3}
 --- !u!43 &680906321
@@ -12589,6 +12589,25 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1763964115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1461047605768043487, guid: 10dfecadb2a5be542a88fee65bacc859,
+    type: 3}
+  m_PrefabInstance: {fileID: 1026384698}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1763964123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1763964115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dc8b22ff08e781478320471d3d28e4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 2142613857}
 --- !u!1001 &1791517933
 PrefabInstance:
   m_ObjectHideFlags: 0
