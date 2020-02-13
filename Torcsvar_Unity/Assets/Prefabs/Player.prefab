@@ -317,9 +317,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8746678193447392789}
   - component: {fileID: 6145509692674227223}
+  - component: {fileID: 7089486947080796080}
   - component: {fileID: 814417836257332542}
   - component: {fileID: 3122855503829242450}
-  - component: {fileID: 6268538116984687401}
   - component: {fileID: 402082967780299635}
   - component: {fileID: 1272397862697293493}
   - component: {fileID: 1661717823}
@@ -364,6 +364,20 @@ MonoBehaviour:
   triggerAxisThreshold: 0.4
   invertYAxis: 0
   invertXAxis: 0
+--- !u!114 &7089486947080796080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7253983127304857660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c73629f8550a94aad0cf2f8f91d244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 7442781921941657531}
+  uiText: {fileID: 0}
 --- !u!114 &814417836257332542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,20 +434,6 @@ CharacterController:
   m_SkinWidth: 0.001
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &6268538116984687401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7253983127304857660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b4c4e7c5d6cd34bb04cb46517b4e23, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  affiliation: 1
-  aimPoint: {fileID: 3625601170703586302}
 --- !u!114 &402082967780299635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,6 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
+  countKeys: 0
   pickUpText: {fileID: 0}
   pickUpNote: {fileID: 0}
   Note: {fileID: 0}

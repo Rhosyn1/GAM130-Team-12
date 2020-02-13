@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5194896371531923608}
   - component: {fileID: 4558996236196804808}
   - component: {fileID: 5953818784978648183}
+  - component: {fileID: 2701333609635381389}
   m_Layer: 0
   m_Name: Key
   m_TagString: Key
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 7769683861192650739}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.25078583, y: -0.7327757, z: -0.01873684}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -106,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 0}
+  countKeys: 0
   pickUpText: {fileID: 0}
   pickUpNote: {fileID: 0}
   Note: {fileID: 0}
@@ -124,5 +126,21 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!208 &2701333609635381389
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769683861192650739}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

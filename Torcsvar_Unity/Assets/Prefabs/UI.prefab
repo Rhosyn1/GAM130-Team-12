@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press F to view note
+  m_Text: Press E to view note
 --- !u!1 &2207384143609538688
 GameObject:
   m_ObjectHideFlags: 0

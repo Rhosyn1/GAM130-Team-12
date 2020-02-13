@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ObjectPickup : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class ObjectPickup : MonoBehaviour
 
     public GameObject playerCamera;
 
-    private bool boolKey = false;
+    public int countKeys;
+
 
     public Text pickUpText;
     public Text pickUpNote;
@@ -17,6 +19,8 @@ public class ObjectPickup : MonoBehaviour
     public GameObject Note;
 
     public Image image;
+
+    public GameObject roomDoor;
 
 
     //picking up the item (key) after pressing E.
@@ -32,7 +36,7 @@ public class ObjectPickup : MonoBehaviour
                 //if E is pressed then object is destroyed and the bool is turned to true.
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    boolKey = true;
+                    countKeys++;
                     Destroy(hit.transform.gameObject);
                 }
             }
@@ -57,15 +61,42 @@ public class ObjectPickup : MonoBehaviour
                         image.gameObject.SetActive(true);
                         pickUpNote.gameObject.SetActive(false);
                     }
-                    else if(image.gameObject.activeSelf)
+                    else if (image.gameObject.activeSelf)
                     {
                         image.gameObject.SetActive(false);
                     }
+                    
                 }
             }
+            //sets image and note text to inactive
             else
             {
                 pickUpNote.gameObject.SetActive(false);
+                image.gameObject.SetActive(false);
+            }
+
+            if (Vector3.Distance(playerCamera.transform.position, playerCamera.transform.forward) >= 3f)
+            {
+                image.gameObject.SetActive(false);
+            }                      
+            
+            //if all 5 keys have been collected then door opens.
+            if (hit.transform.CompareTag("Door"))
+            {
+                if (countKeys == 5)
+                {
+                    Destroy(roomDoor);
+                    Destroy(hit.transform.gameObject);
+                }
+            }
+
+            if (hit.transform.CompareTag("Heart"))
+            {
+                pickUpText.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    SceneManager.LoadScene(2);
+                }
             }
         }
         else

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4263500785934360165}
   - component: {fileID: 1353216985546190492}
   - component: {fileID: 3404666649905144021}
+  - component: {fileID: 8186833038965632551}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -108,6 +109,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  patrol:
+  - {x: 20, y: 1, z: 44}
+  - {x: 20, y: 1, z: -1}
+  - {x: -9, y: 1, z: -1}
+  - {x: -9, y: 1, z: 44}
 --- !u!54 &1353216985546190492
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -134,11 +140,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 3
+  m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -146,3 +152,17 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &8186833038965632551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461047605768043487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1340ab21c15f54aa5c910a422baaf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerHealth: 10
+  playerObject: {fileID: 0}
