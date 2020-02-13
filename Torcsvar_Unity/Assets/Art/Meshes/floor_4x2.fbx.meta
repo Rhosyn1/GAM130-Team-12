@@ -1,14 +1,16 @@
 fileFormatVersion: 2
-guid: 1b7984d1c82892b49b28c7ac5ab88fa5
+guid: cd3ecbb78e4327840b5ccb9438dc3694
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: floor_4x2
+    100002: //RootNode
+    400000: floor_4x2
+    400002: //RootNode
     2100000: lambert1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: tunnel_stairs_2x1p5
+    2300000: floor_4x2
+    3300000: floor_4x2
+    4300000: floor_4x2
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -49,7 +51,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -57,9 +59,9 @@ ModelImporter:
     preserveHierarchy: 0
     indexFormat: 0
     secondaryUVAngleDistortion: 8
-    secondaryUVAreaDistortion: 15
+    secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVPackMargin: 64
+    secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0

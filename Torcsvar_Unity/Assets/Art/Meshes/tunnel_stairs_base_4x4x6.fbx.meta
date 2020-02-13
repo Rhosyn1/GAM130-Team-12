@@ -1,27 +1,32 @@
 fileFormatVersion: 2
-guid: c5de489fd87c00e47849c3e790d6f4e5
+guid: b3b6e2bdeebc0544aa4efb6c2c302d9d
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: tunnel_quad_intersection_4x4
-    100004: tunnel_quad_intersection_4x4_collision
-    400000: //RootNode
-    400002: tunnel_quad_intersection_4x4
-    400004: tunnel_quad_intersection_4x4_collision
-    2100000: lambert1
-    2100002: lambert2
-    2100004: lambert7
-    2100006: lambert11
-    2300000: //RootNode
-    2300002: tunnel_quad_intersection_4x4
-    2300004: tunnel_quad_intersection_4x4_collision
-    3300000: //RootNode
-    3300002: tunnel_quad_intersection_4x4
-    3300004: tunnel_quad_intersection_4x4_collision
-    4300000: tunnel_quad_intersection_4x4
-    4300002: tunnel_tri_intersection_4x4
-    4300004: tunnel_quad_intersection_4x4_collision
+    100000: tunnel_stairs_4x4x6
+    100002: tunnel_stairs_4x4x6_collision
+    100004: //RootNode
+    100006: tunnel_stairs_base_4x4x6
+    100008: tunnel_stairs_base_4x4x6_collision
+    400000: tunnel_stairs_4x4x6
+    400002: tunnel_stairs_4x4x6_collision
+    400004: //RootNode
+    400006: tunnel_stairs_base_4x4x6
+    400008: tunnel_stairs_base_4x4x6_collision
+    2100000: lambert2
+    2100002: lambert1
+    2300000: tunnel_stairs_4x4x6
+    2300002: tunnel_stairs_4x4x6_collision
+    2300004: tunnel_stairs_base_4x4x6
+    2300006: tunnel_stairs_base_4x4x6_collision
+    3300000: tunnel_stairs_4x4x6
+    3300002: tunnel_stairs_4x4x6_collision
+    3300004: tunnel_stairs_base_4x4x6
+    3300006: tunnel_stairs_base_4x4x6_collision
+    4300000: tunnel_stairs_4x4x6
+    4300002: tunnel_stairs_4x4x6_collision
+    4300004: tunnel_stairs_base_4x4x6
+    4300006: tunnel_stairs_base_4x4x6_collision
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -62,7 +67,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -70,9 +75,9 @@ ModelImporter:
     preserveHierarchy: 0
     indexFormat: 0
     secondaryUVAngleDistortion: 8
-    secondaryUVAreaDistortion: 15
+    secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
-    secondaryUVPackMargin: 64
+    secondaryUVPackMargin: 4
     useFileScale: 1
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
