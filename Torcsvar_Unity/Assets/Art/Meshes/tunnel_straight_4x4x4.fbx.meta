@@ -12,6 +12,8 @@ ModelImporter:
     2100000: lambert1
     2100002: lambert5
     2100004: lambert6
+    2100006: lambert2
+    2100008: lambert14
     2300000: //RootNode
     2300002: tunnel_straight_4x4x4
     2300004: tunnel_straight_4x4x4_collision

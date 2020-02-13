@@ -11,6 +11,7 @@ ModelImporter:
     400004: tunnel_tri_intersection_4x4_collision
     2100000: lambert1
     2100002: lambert2
+    2100004: lambert15
     2300000: //RootNode
     2300002: tunnel_tri_intersection_4x4
     2300004: tunnel_tri_intersection_4x4_collision
