@@ -2851,12 +2851,12 @@ PrefabInstance:
         type: 3}
       propertyPath: footstepSFX
       value: 
-      objectReference: {fileID: 8300000, guid: 0c5b43407e58dcd489c5967e32a82aec, type: 3}
+      objectReference: {fileID: 8300000, guid: 52d31f5e9eba4464795f2dcbcde32608, type: 3}
     - target: {fileID: 814417836257332542, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: jumpSFX
       value: 
-      objectReference: {fileID: 8300000, guid: 240811366406af14bb1ed710a8567994, type: 3}
+      objectReference: {fileID: 8300000, guid: c7bfff20125317946ad803d44a3b7e2b, type: 3}
     - target: {fileID: 814417836257332542, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: audioSource
@@ -2866,7 +2866,12 @@ PrefabInstance:
         type: 3}
       propertyPath: landSFX
       value: 
-      objectReference: {fileID: 8300000, guid: 8c8e753c0258da146b2584948d9a9d87, type: 3}
+      objectReference: {fileID: 8300000, guid: bf6b5183938079f41934a9fc9b4d2a03, type: 3}
+    - target: {fileID: 814417836257332542, guid: 761cdc9e4e883334cbdcea062d0befa7,
+        type: 3}
+      propertyPath: fallDamageSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 0039197132f30864d804fbc03e6034a2, type: 3}
     - target: {fileID: 402082967780299635, guid: 761cdc9e4e883334cbdcea062d0befa7,
         type: 3}
       propertyPath: Key
@@ -8480,6 +8485,11 @@ PrefabInstance:
       propertyPath: Loop
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4160549848294572208, guid: c996b53e9f849234393d1e90f68d1679,
+        type: 3}
+      propertyPath: BypassEffects
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1315839542190839938, guid: c996b53e9f849234393d1e90f68d1679, type: 3}
     - {fileID: 556685733, guid: c996b53e9f849234393d1e90f68d1679, type: 3}
@@ -12655,7 +12665,6 @@ MonoBehaviour:
   Player: {fileID: 2142613857}
   audioSource: {fileID: 1875400164}
   playerHeard: 0
-  countKeys: 0
   hearingRange:
   - 10
   - 16

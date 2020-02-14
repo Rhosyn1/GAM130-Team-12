@@ -148,11 +148,8 @@ public class PlayerCharacterController : MonoBehaviour
         if (Input.GetButton("Jump"))
         {
             audioSource.volume = 0.5f;
-            if (!audioSource.isPlaying)
-            {
-                audioSource.clip = jumpSFX;
-                audioSource.PlayOneShot(jumpSFX, 0.5f);
-            }
+            audioSource.clip = jumpSFX;
+            audioSource.Play();
         }
 
         //Horizontal and Vertical movement SFX
