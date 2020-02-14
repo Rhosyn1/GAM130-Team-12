@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyNavMesh : MonoBehaviour
 {
     public Transform target;
-    private NavMeshAgent agent;
+    public NavMeshAgent agent;
 
     public List<Vector3> patrol;
 

@@ -321,8 +321,8 @@ GameObject:
   - component: {fileID: 814417836257332542}
   - component: {fileID: 3122855503829242450}
   - component: {fileID: 402082967780299635}
-  - component: {fileID: 1272397862697293493}
   - component: {fileID: 1661717823}
+  - component: {fileID: 1653083704750410483}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 8303093099919959869}
-  audioSource: {fileID: 1272397862697293493}
+  audioSource: {fileID: 1661717823}
   gravityDownForce: 20
   groundCheckLayers:
     serializedVersion: 2
@@ -412,6 +412,9 @@ MonoBehaviour:
   crouchingSharpness: 15
   footstepSFXFrequency: 0.3
   footstepSFXFrequencyWhileSprinting: 0.2
+  SFXFrequencyWhileJumping: 5
+  SFXFrequencyWhileLanding: 8
+  SFXFrequencyWhileTakingFallDamage: 10
   footstepSFX: {fileID: 8300000, guid: f404f8d3c2a4b4f48989fb1120e78fb8, type: 3}
   jumpSFX: {fileID: 8300000, guid: 13b59a14d34add64d84a623867546ff1, type: 3}
   landSFX: {fileID: 8300000, guid: d0f1afed8fa916244af6ca73579ded67, type: 3}
@@ -452,7 +455,8 @@ MonoBehaviour:
   pickUpNote: {fileID: 0}
   Note: {fileID: 0}
   image: {fileID: 0}
---- !u!82 &1272397862697293493
+  roomDoor: {fileID: 0}
+--- !u!82 &1661717823
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -462,11 +466,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0c5b43407e58dcd489c5967e32a82aec, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -548,7 +552,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &1661717823
+--- !u!82 &1653083704750410483
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -557,12 +561,13 @@ AudioSource:
   m_GameObject: {fileID: 7253983127304857660}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 01a15bd1861d7914abbedc36aad1f4d6, type: 3}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: de8f42bba0478dc4ab250bb432c9c692,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 0c5b43407e58dcd489c5967e32a82aec, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

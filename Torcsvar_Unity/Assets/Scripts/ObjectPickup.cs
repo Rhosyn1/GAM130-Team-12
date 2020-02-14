@@ -11,7 +11,7 @@ public class ObjectPickup : MonoBehaviour
     public GameObject playerCamera;
 
     public int countKeys;
-
+    public int keyReset;
 
     public Text pickUpText;
     public Text pickUpNote;
@@ -37,6 +37,7 @@ public class ObjectPickup : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     countKeys++;
+                    keyReset++;
                     Destroy(hit.transform.gameObject);
                 }
             }
