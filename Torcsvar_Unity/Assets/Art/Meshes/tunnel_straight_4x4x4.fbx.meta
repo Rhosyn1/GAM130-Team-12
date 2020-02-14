@@ -14,6 +14,7 @@ ModelImporter:
     2100004: lambert6
     2100006: lambert2
     2100008: lambert14
+    2100010: lambert21
     2300000: //RootNode
     2300002: tunnel_straight_4x4x4
     2300004: tunnel_straight_4x4x4_collision
@@ -24,7 +25,7 @@ ModelImporter:
     4300002: tunnel_straight_4x4x4_collision
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1

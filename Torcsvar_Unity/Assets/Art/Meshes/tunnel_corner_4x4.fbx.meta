@@ -23,7 +23,7 @@ ModelImporter:
     4300002: tunnel_corner_4x4_collision
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1

@@ -12,6 +12,7 @@ ModelImporter:
     2100000: lambert2
     2100002: lambert1
     2100004: lambert10
+    2100006: lambert20
     2300000: //RootNode
     2300002: tunnel_stairs_mid_4x4x6
     2300004: tunnel_stairs_mid_4x4x6_collision
@@ -23,7 +24,7 @@ ModelImporter:
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1
