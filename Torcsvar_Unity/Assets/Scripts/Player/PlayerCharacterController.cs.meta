@@ -3,7 +3,13 @@ guid: f8e9b849ae2755b428b23edfa9686c79
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - playerCamera: {instanceID: 0}
+  - audioSource: {instanceID: 0}
+  - footstepSFX: {fileID: 8300000, guid: 52d31f5e9eba4464795f2dcbcde32608, type: 3}
+  - jumpSFX: {fileID: 8300000, guid: c7bfff20125317946ad803d44a3b7e2b, type: 3}
+  - landSFX: {fileID: 8300000, guid: bf6b5183938079f41934a9fc9b4d2a03, type: 3}
+  - fallDamageSFX: {fileID: 8300000, guid: 0039197132f30864d804fbc03e6034a2, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

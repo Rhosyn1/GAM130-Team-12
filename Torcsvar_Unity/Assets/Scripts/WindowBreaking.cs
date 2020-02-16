@@ -14,7 +14,7 @@ public class WindowBreaking : MonoBehaviour
         //Use a raycast to see if the player is looking at a window or not
         if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out RaycastHit hit, 2.5f))
         {
-            if (hit.collider.gameObject.name == "Window")
+            if (hit.collider.gameObject.name == "Window" && hit.collider.gameObject.GetComponent<WindowScript>().isSmashed == false)
             {
                 uiText.gameObject.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
