@@ -126,14 +126,6 @@ public class PlayerCharacterController : MonoBehaviour
         bool wasGrounded = isGrounded;
         GroundCheck();
 
-        // Landing
-        if (isGrounded && !wasGrounded)
-        {
-            audioSource.volume = 0.8f;
-            audioSource.clip = landSFX;
-            audioSource.PlayOneShot(landSFX, 0.8f);
-        }
-
         // Crouching
         if (m_InputHandler.GetCrouchInputDown())
         {
@@ -144,52 +136,71 @@ public class PlayerCharacterController : MonoBehaviour
 
         HandleCharacterMovement();
 
-        // Jumping SFX
-        if (Input.GetButton("Jump"))
+        if (Input.anyKey)
         {
-            audioSource.volume = 0.5f;
-            audioSource.clip = jumpSFX;
-            audioSource.Play();
+            // Jumping SFX
+            if (Input.GetButtonDown("Jump"))
+            {
+                audioSource.clip = jumpSFX;
+                if (audioSource.volume != 0.5F)
+                {
+                    audioSource.volume = 0.5f;
+                    audioSource.PlayOneShot(jumpSFX, 0.5f);
+                }
+                if (Input.GetButtonUp("Jump"))
+                {
+                    audioSource.Stop();
+                }
+            }
+            // Landing
+            if (isGrounded && !wasGrounded)
+            {
+                audioSource.clip = landSFX;
+                if (audioSource.volume != 0.8f)
+                {
+                    audioSource.volume = 0.8f;
+                    audioSource.PlayOneShot(landSFX, 0.8f);
+                }
+            }
+            //Horizontal and Vertical movement SFX
+            if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
+            {
+                audioSource.clip = footstepSFX;
+                if (!Input.GetButton("Sprint") || !isCrouching)
+                {
+                    
+                    if (audioSource.volume != 0.2f)
+                    {
+                        audioSource.volume = 0.2f;
+                        audioSource.Play();
+                    }
+                }
+                //Check if crouching, and adjust volume as such.
+                if (isCrouching)
+                {
+                    if (audioSource.volume != 0.1f)
+                    {
+                        audioSource.volume = 0.1f;
+                        audioSource.Play();
+                    }
+                }
+                //Check if sprinting, and adjust volume as such.
+                if (Input.GetButton("Sprint"))
+                {
+                    if (audioSource.volume != 0.3f)
+                    {
+                        audioSource.volume = 0.3f;
+                        audioSource.Play();
+                    }
+                }
+            }
         }
-
-        //Horizontal and Vertical movement SFX
-        if (Input.GetButton("Horizontal") || Input.GetButton("Vertical"))
-        {
-            if (!Input.GetButton("Sprint") || !Input.GetButton("Crouch"))
-            {
-                audioSource.clip = footstepSFX;
-                if (audioSource.volume != 0.2f)
-                {
-                    audioSource.volume = 0.2f;
-                    audioSource.Play();
-                }
-            }
-            if (isCrouching)
-            {
-                audioSource.clip = footstepSFX;
-                if (audioSource.volume != 0.1f)
-                {
-                    audioSource.volume = 0.1f;
-                    audioSource.Play();
-                }
-            }
-            if (Input.GetButton("Sprint"))
-            {
-                audioSource.clip = footstepSFX;
-                if (audioSource.volume != 0.3f)
-                {
-                    audioSource.volume = 0.3f;
-                    audioSource.Play();
-                }
-            }
-        }
-        //Idle will stop SFX
-        else
+        else if (!Input.anyKey)
         {
             audioSource.Stop();
         }
-
     }
+        
 
     void OnDie()
     {
