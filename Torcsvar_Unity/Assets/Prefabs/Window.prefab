@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7986735081351043972}
   - component: {fileID: 7986735081351043973}
   - component: {fileID: 7986735081351043970}
+  - component: {fileID: 4098525507097462642}
   m_Layer: 9
   m_Name: Light
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7986735081351043968}
   m_LocalRotation: {x: -0, y: -0, z: -0.07408127, w: 0.9972522}
   m_LocalPosition: {x: 2.9040003, y: -0.35200036, z: 0}
-  m_LocalScale: {x: 5, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 1.1648, z: 1}
   m_Children: []
   m_Father: {fileID: 7986735081663898742}
   m_RootOrder: 0
@@ -91,6 +92,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!208 &4098525507097462642
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7986735081351043968}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &7986735081663898738
 GameObject:
   m_ObjectHideFlags: 0

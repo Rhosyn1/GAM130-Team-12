@@ -321,9 +321,9 @@ GameObject:
   - component: {fileID: 814417836257332542}
   - component: {fileID: 3122855503829242450}
   - component: {fileID: 402082967780299635}
-  - component: {fileID: 1661717823}
   - component: {fileID: 1653083704750410483}
-  m_Layer: 0
+  - component: {fileID: 5273325334790818819}
+  m_Layer: 12
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -391,21 +391,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 8303093099919959869}
-  audioSource: {fileID: 1661717823}
+  audioSource: {fileID: 0}
   gravityDownForce: 20
   groundCheckLayers:
     serializedVersion: 2
     m_Bits: 1
   groundCheckDistance: 1
-  maxSpeedOnGround: 13
-  movementSharpnessOnGround: 15
+  maxSpeedOnGround: 5
+  movementSharpnessOnGround: 10
   maxSpeedCrouchedRatio: 0.5
-  maxSpeedInAir: 10
+  maxSpeedInAir: 5
   accelerationSpeedInAir: 25
-  sprintSpeedModifier: 1.5
+  sprintSpeedModifier: 2
   rotationSpeed: 200
   aimingRotationMultiplier: 0.4
-  jumpForce: 9
+  jumpForce: 3
   cameraHeightRatio: 0.8
   capsuleHeightStanding: 1.8
   capsuleHeightCrouching: 0.9
@@ -415,10 +415,10 @@ MonoBehaviour:
   SFXFrequencyWhileJumping: 5
   SFXFrequencyWhileLanding: 8
   SFXFrequencyWhileTakingFallDamage: 10
-  footstepSFX: {fileID: 8300000, guid: f404f8d3c2a4b4f48989fb1120e78fb8, type: 3}
-  jumpSFX: {fileID: 8300000, guid: 13b59a14d34add64d84a623867546ff1, type: 3}
-  landSFX: {fileID: 8300000, guid: d0f1afed8fa916244af6ca73579ded67, type: 3}
-  fallDamageSFX: {fileID: 8300000, guid: ef980d09b569380459e609fe90ef1db2, type: 3}
+  footstepSFX: {fileID: 8300000, guid: 52d31f5e9eba4464795f2dcbcde32608, type: 3}
+  jumpSFX: {fileID: 8300000, guid: c7bfff20125317946ad803d44a3b7e2b, type: 3}
+  landSFX: {fileID: 8300000, guid: bf6b5183938079f41934a9fc9b4d2a03, type: 3}
+  fallDamageSFX: {fileID: 8300000, guid: 0039197132f30864d804fbc03e6034a2, type: 3}
 --- !u!143 &3122855503829242450
 CharacterController:
   m_ObjectHideFlags: 0
@@ -449,14 +449,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27b65af4494aef49966817dc78ed5dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 7442781921941657531}
   countKeys: 0
+  keyReset: 0
   pickUpText: {fileID: 0}
   pickUpNote: {fileID: 0}
   Note: {fileID: 0}
   image: {fileID: 0}
   roomDoor: {fileID: 0}
---- !u!82 &1661717823
+--- !u!82 &1653083704750410483
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -466,11 +467,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0c5b43407e58dcd489c5967e32a82aec, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -552,7 +553,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!82 &1653083704750410483
+--- !u!82 &5273325334790818819
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -561,9 +562,8 @@ AudioSource:
   m_GameObject: {fileID: 7253983127304857660}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300002, guid: de8f42bba0478dc4ab250bb432c9c692,
-    type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0c5b43407e58dcd489c5967e32a82aec, type: 3}
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
