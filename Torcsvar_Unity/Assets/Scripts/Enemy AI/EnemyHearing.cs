@@ -9,7 +9,7 @@ public class EnemyHearing : MonoBehaviour
     public GameObject Player;
     public AudioSource audioSource;
 
-    private NavMeshAgent Agent;
+    private NavMeshAgent agent;
     private Transform Target;
     private float distancePlayer;
     public bool playerHeard;
@@ -81,7 +81,33 @@ public class EnemyHearing : MonoBehaviour
         {
             GameObject theEnemy = GameObject.Find("Enemy");
             EnemyNavMesh navMesh = theEnemy.GetComponent<EnemyNavMesh>();
-            navMesh.agent.SetDestination(navMesh.target.transform.position);
+            agent.SetDestination(navMesh.target.transform.position);
         }
     }
+
+    /*private NavMeshAgent agent;
+    private EnemyNavMesh enemyNavMesh;
+    [SerializeField]
+    private float hearingDistance = 20f;
+
+    private void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        enemyNavMesh = GetComponent<EnemyNavMesh>();
+    }
+
+    public void ReactToSound(Vector3 source)
+    {
+        Collider[] collidersFound = Physics.OverlapSphere(source, hearingDistance);
+
+        foreach (Collider coll in collidersFound)
+        {
+            if (coll.gameObject.CompareTag("Enemy"))
+            {
+                agent.SetDestination(source);
+                enemyNavMesh.UpdateHearingStatus(true, source);
+                break;
+            }
+        }
+    }*/
 }

@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class EnemyNavMesh : MonoBehaviour
 {
     public Transform target;
-    public NavMeshAgent agent;
+    private NavMeshAgent agent;
 
     public List<Vector3> patrol;
 
@@ -15,8 +15,9 @@ public class EnemyNavMesh : MonoBehaviour
     private EnemyPatrolPath currentPatrol;
     private int currentPoint;
 
-    public WindowScript windowSmashed;
-    //setting the current point to 0 if path is null.
+    private bool followingSound = false;
+    private Vector3 soundLocation;
+
     void Start()
     {
         patrolPath = new EnemyPatrolPath(patrol);
@@ -30,10 +31,10 @@ public class EnemyNavMesh : MonoBehaviour
     }
 
    
-    public void Update()
-    {
+    private void Update()
+    {   
         //setting points for enemy
-        if (currentPatrol != null)
+        if (currentPatrol != null && !followingSound)
         {
             agent.SetDestination(currentPatrol.patrolPoints[currentPoint]);
 
@@ -47,10 +48,21 @@ public class EnemyNavMesh : MonoBehaviour
             }
         }
 
+        if (followingSound && Vector3.Distance(gameObject.transform.position, soundLocation) <= 1)
+        {
+            followingSound = false;
+        }
+
         //if the enemy is within a certain distance from player then follow the player
         if (Vector3.Distance(transform.position, target.transform.position) <= 10f)
         {
             agent.SetDestination(target.transform.position);
         }
+    }
+
+    public void UpdateHearingStatus(bool followSound, Vector3 location)
+    {
+        followingSound = followSound;
+        soundLocation = location;
     }
 }

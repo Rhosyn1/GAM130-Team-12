@@ -8,6 +8,7 @@ TagManager:
   - Note
   - Door
   - Heart
+  - Enemy
   layers:
   - Default
   - TransparentFX
