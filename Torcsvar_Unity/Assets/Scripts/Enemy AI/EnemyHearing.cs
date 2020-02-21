@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class EnemyHearing : MonoBehaviour
 {
-    public GameObject Player;
+    /*public GameObject Player;
     public AudioSource audioSource;
 
     private NavMeshAgent agent;
@@ -83,9 +83,9 @@ public class EnemyHearing : MonoBehaviour
             EnemyNavMesh navMesh = theEnemy.GetComponent<EnemyNavMesh>();
             agent.SetDestination(navMesh.target.transform.position);
         }
-    }
+    }*/
 
-    /*private NavMeshAgent agent;
+    private NavMeshAgent agent;
     private EnemyNavMesh enemyNavMesh;
     [SerializeField]
     private float hearingDistance = 20f;
@@ -109,5 +109,5 @@ public class EnemyHearing : MonoBehaviour
                 break;
             }
         }
-    }*/
+    }
 }

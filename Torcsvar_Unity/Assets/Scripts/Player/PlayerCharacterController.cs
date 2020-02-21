@@ -150,7 +150,7 @@ public class PlayerCharacterController : MonoBehaviour
                 {
                     audioSource.volume = 0.5f;
                     audioSource.PlayOneShot(jumpSFX, 0.5f);
-                    //enemy.ReactToSound(gameObject.transform.position);
+                    enemy.ReactToSound(gameObject.transform.position);
                 }
                 if (Input.GetButtonUp("Jump"))
                 {
@@ -165,7 +165,7 @@ public class PlayerCharacterController : MonoBehaviour
                 {
                     audioSource.volume = 0.8f;
                     audioSource.PlayOneShot(landSFX, 0.8f);
-                    //enemy.ReactToSound(gameObject.transform.position);
+                    enemy.ReactToSound(gameObject.transform.position);
                 }
             }
             //Horizontal and Vertical movement SFX
@@ -179,7 +179,7 @@ public class PlayerCharacterController : MonoBehaviour
                     {
                         audioSource.volume = 0.2f;
                         audioSource.Play();
-                        //enemy.ReactToSound(gameObject.transform.position);
+                        enemy.ReactToSound(gameObject.transform.position);
                     }
                 }
                 //Check if crouching, and adjust volume as such.
@@ -189,7 +189,7 @@ public class PlayerCharacterController : MonoBehaviour
                     {
                         audioSource.volume = 0.1f;
                         audioSource.Play();
-                        //enemy.ReactToSound(gameObject.transform.position);
+                        enemy.ReactToSound(gameObject.transform.position);
                     }
                 }
                 //Check if sprinting, and adjust volume as such.
@@ -199,7 +199,7 @@ public class PlayerCharacterController : MonoBehaviour
                     {
                         audioSource.volume = 0.3f;
                         audioSource.Play();
-                        //enemy.ReactToSound(gameObject.transform.position);
+                        enemy.ReactToSound(gameObject.transform.position);
                     }
                 }
             }
