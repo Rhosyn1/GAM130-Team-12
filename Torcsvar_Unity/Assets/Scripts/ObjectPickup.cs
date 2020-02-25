@@ -11,7 +11,6 @@ public class ObjectPickup : MonoBehaviour
     public GameObject playerCamera;
 
     public int countKeys;
-    public int keyReset;
 
     public Text pickUpText;
     public Text pickUpNote;
@@ -37,7 +36,6 @@ public class ObjectPickup : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     countKeys++;
-                    keyReset++;
                     Destroy(hit.transform.gameObject);
                 }
             }
@@ -74,12 +72,7 @@ public class ObjectPickup : MonoBehaviour
             {
                 pickUpNote.gameObject.SetActive(false);
                 image.gameObject.SetActive(false);
-            }
-
-            if (Vector3.Distance(playerCamera.transform.position, playerCamera.transform.forward) >= 3f)
-            {
-                image.gameObject.SetActive(false);
-            }                      
+            }                   
             
             //if all 5 keys have been collected then door opens.
             if (hit.transform.CompareTag("Door"))

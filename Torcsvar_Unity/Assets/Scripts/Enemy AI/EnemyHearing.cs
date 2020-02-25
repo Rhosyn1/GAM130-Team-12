@@ -84,7 +84,6 @@ public class EnemyHearing : MonoBehaviour
             agent.SetDestination(navMesh.target.transform.position);
         }
     }*/
-
     private NavMeshAgent agent;
     private EnemyNavMesh enemyNavMesh;
     [SerializeField]
@@ -92,16 +91,19 @@ public class EnemyHearing : MonoBehaviour
 
     private void Start()
     {
+        //getting the components on the enemy
         agent = GetComponent<NavMeshAgent>();
         enemyNavMesh = GetComponent<EnemyNavMesh>();
     }
-
     public void ReactToSound(Vector3 source)
     {
+        //Looking for colliders within a sphere from the player up to the hearing distance already set.
         Collider[] collidersFound = Physics.OverlapSphere(source, hearingDistance);
 
+        //going through all the colliders found in list
         foreach (Collider coll in collidersFound)
         {
+            //if an object within hearing distance has the tag enemy then enemy goes to the source.
             if (coll.gameObject.CompareTag("Enemy"))
             {
                 agent.SetDestination(source);

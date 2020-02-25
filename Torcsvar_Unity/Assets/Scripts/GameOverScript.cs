@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameOverScript : MonoBehaviour
 {
-    // Update is called once per frame
+    //also not my best idea :) 
     void Update()
     {
         StartCoroutine(waitTime());

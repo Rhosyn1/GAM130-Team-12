@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//not my best idea :)
 public class EnemyDealDamage : MonoBehaviour
 {
     public int playerHealth;
