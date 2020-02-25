@@ -39,8 +39,6 @@ public class PlayerCharacterController : MonoBehaviour
     [Tooltip("Rotation speed for moving the camera")]
     public float rotationSpeed = 200f;
     [Range(0.1f, 1f)]
-    [Tooltip("Rotation speed multiplier when aiming")]
-    public float aimingRotationMultiplier = 0.4f;
 
     [Header("Jump")]
     [Tooltip("Force applied upward when jumping")]
@@ -386,8 +384,6 @@ public class PlayerCharacterController : MonoBehaviour
         m_LatestImpactSpeed = Vector3.zero;
         if (Physics.CapsuleCast(capsuleBottomBeforeMove, capsuleTopBeforeMove, m_Controller.radius, characterVelocity.normalized, out RaycastHit hit, characterVelocity.magnitude * Time.deltaTime, -1, QueryTriggerInteraction.Ignore))
         {
-            // We remember the last impact speed because the fall damage logic might need it
-            m_LatestImpactSpeed = characterVelocity;
 
             characterVelocity = Vector3.ProjectOnPlane(characterVelocity, hit.normal);
         }
