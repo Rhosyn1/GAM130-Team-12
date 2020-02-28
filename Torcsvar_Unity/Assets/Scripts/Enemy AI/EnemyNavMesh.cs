@@ -19,9 +19,14 @@ public class EnemyNavMesh : MonoBehaviour
     private bool followingSound = false;
     private Vector3 soundLocation;
 
+    [SerializeField]
+    private float hearingDistance = 20f;
+
     void Start()
     {
         patrolPath = new EnemyPatrolPath(patrol);
+
+        agent = GetComponent<NavMeshAgent>();
 
         agent = transform.GetComponent<NavMeshAgent>();
         if (patrolPath != null)
@@ -58,6 +63,24 @@ public class EnemyNavMesh : MonoBehaviour
         if (Vector3.Distance(transform.position, target.transform.position) <= 10f)
         {
             agent.SetDestination(target.transform.position);
+        }
+    }
+
+    public void ReactToSound(Vector3 source)
+    {
+        //Looking for colliders within a sphere from the player up to the hearing distance already set.
+        Collider[] collidersFound = Physics.OverlapSphere(source, hearingDistance);
+
+        //going through all the colliders found in list
+        foreach (Collider coll in collidersFound)
+        {
+            //if an object within hearing distance has the tag enemy then enemy goes to the source.
+            if (coll.gameObject.CompareTag("Enemy"))
+            {
+                agent.SetDestination(source);
+                UpdateHearingStatus(true, source);
+                break;
+            }
         }
     }
 
