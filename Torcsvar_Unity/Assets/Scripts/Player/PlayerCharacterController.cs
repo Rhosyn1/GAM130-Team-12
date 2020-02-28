@@ -100,7 +100,7 @@ public class PlayerCharacterController : MonoBehaviour
     const float k_JumpGroundingPreventionTime = 0.2f;
     const float k_GroundCheckDistanceInAir = 0.07f;
 
-    private EnemyHearing enemy;
+    private EnemyNavMesh enemy;
 
     void Start()
     {
@@ -117,7 +117,7 @@ public class PlayerCharacterController : MonoBehaviour
         SetCrouchingState(false, true);
         UpdateCharacterHeight(true);
 
-        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyHearing>();
+        enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyNavMesh>();
     }
 
     void Update()
