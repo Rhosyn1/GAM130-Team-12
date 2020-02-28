@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 8746678193447392789}
   - component: {fileID: 6145509692674227223}
   - component: {fileID: 7089486947080796080}
+  - component: {fileID: 4953302739295768434}
   - component: {fileID: 814417836257332542}
   - component: {fileID: 3122855503829242450}
   - component: {fileID: 402082967780299635}
@@ -378,6 +379,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 7442781921941657531}
   uiText: {fileID: 0}
+--- !u!114 &4953302739295768434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7253983127304857660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 063dbc5ed20511e438d09f01bb1dea63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  switchText: {fileID: 0}
+  playerCamera: {fileID: 8303093099919959869}
 --- !u!114 &814417836257332542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,7 +419,6 @@ MonoBehaviour:
   accelerationSpeedInAir: 25
   sprintSpeedModifier: 2
   rotationSpeed: 200
-  aimingRotationMultiplier: 0.4
   jumpForce: 3
   cameraHeightRatio: 0.8
   capsuleHeightStanding: 1.8
@@ -451,7 +465,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 7442781921941657531}
   countKeys: 0
-  keyReset: 0
   pickUpText: {fileID: 0}
   pickUpNote: {fileID: 0}
   Note: {fileID: 0}
