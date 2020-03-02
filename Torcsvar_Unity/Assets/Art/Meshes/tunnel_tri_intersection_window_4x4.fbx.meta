@@ -10,6 +10,7 @@ ModelImporter:
     400002: tunnel_tri_intersection_window_4x4
     400004: tunnel_tri_intersection_window_4x4_collision
     2100000: lambert21
+    2100002: lambert24
     2300000: tunnel_tri_intersection_window_4x4
     2300002: tunnel_tri_intersection_window_4x4_collision
     3300000: tunnel_tri_intersection_window_4x4
@@ -18,7 +19,7 @@ ModelImporter:
     4300002: tunnel_tri_intersection_window_4x4_collision
   externalObjects: {}
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
     materialLocation: 1

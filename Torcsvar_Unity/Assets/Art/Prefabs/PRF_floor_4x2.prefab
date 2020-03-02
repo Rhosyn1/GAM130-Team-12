@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 7484125255162148739}
   - component: {fileID: 8685951646805268459}
   m_Layer: 0
-  m_Name: pf_floor_4x2
+  m_Name: PRF_floor_4x2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,5 +120,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 4, y: 0.2, z: 2}
-  m_Center: {x: -2, y: -0.1, z: -1}
+  m_Size: {x: 4, y: 0.25, z: 2}
+  m_Center: {x: 2, y: -0.125, z: -1}

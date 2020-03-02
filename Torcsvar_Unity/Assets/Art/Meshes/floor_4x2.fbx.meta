@@ -9,7 +9,9 @@ ModelImporter:
     400002: //RootNode
     2100000: lambert1
     2300000: floor_4x2
+    2300002: //RootNode
     3300000: floor_4x2
+    3300002: //RootNode
     4300000: floor_4x2
   externalObjects: {}
   materials:
