@@ -378,6 +378,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 7442781921941657531}
   uiText: {fileID: 0}
+  switchText: {fileID: 0}
 --- !u!114 &814417836257332542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -404,7 +405,6 @@ MonoBehaviour:
   accelerationSpeedInAir: 25
   sprintSpeedModifier: 2
   rotationSpeed: 200
-  aimingRotationMultiplier: 0.4
   jumpForce: 3
   cameraHeightRatio: 0.8
   capsuleHeightStanding: 1.8
@@ -451,7 +451,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 7442781921941657531}
   countKeys: 0
-  keyReset: 0
   pickUpText: {fileID: 0}
   pickUpNote: {fileID: 0}
   Note: {fileID: 0}

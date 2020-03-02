@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WindowBreaking : MonoBehaviour
+public class WindowsAndSwitchesScript : MonoBehaviour
 {
     public GameObject playerCamera;
     public Text uiText;
+    public Text switchText;
 
     // Update is called once per frame
     void Update()
@@ -26,10 +27,20 @@ public class WindowBreaking : MonoBehaviour
             {
                 uiText.gameObject.SetActive(false);
             }
+
+            if (hit.collider.gameObject.name == "Switch")
+            {
+                switchText.gameObject.SetActive(true);
+            }
+            else
+            {
+                switchText.gameObject.SetActive(false);
+            }
         }
         else
         {
             uiText.gameObject.SetActive(false);
+            switchText.gameObject.SetActive(false);
         }
 
 
