@@ -22,6 +22,8 @@ public class EnemyNavMesh : MonoBehaviour
     [SerializeField]
     private float hearingDistance = 20f;
 
+    //animations
+    private Animator anim;
     void Start()
     {
         patrolPath = new EnemyPatrolPath(patrol);
@@ -62,6 +64,7 @@ public class EnemyNavMesh : MonoBehaviour
         //if the enemy is within a certain distance from player then follow the player
         if (Vector3.Distance(transform.position, target.transform.position) <= 10f)
         {
+
             agent.SetDestination(target.transform.position);
         }
     }

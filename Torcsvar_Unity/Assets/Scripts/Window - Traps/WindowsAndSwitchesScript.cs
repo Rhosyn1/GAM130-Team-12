@@ -31,6 +31,10 @@ public class WindowsAndSwitchesScript : MonoBehaviour
             if (hit.collider.gameObject.name == "Switch")
             {
                 switchText.gameObject.SetActive(true);
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    hit.collider.gameObject.GetComponent<SwitchScript>().Use();
+                }
             }
             else
             {
