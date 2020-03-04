@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 4263500785934360165}
   - component: {fileID: 3404666649905144021}
   - component: {fileID: 8186833038965632551}
-  - component: {fileID: 7232031223058035767}
   m_Layer: 13
   m_Name: Enemy
   m_TagString: Enemy
@@ -44,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461047605768043487}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 583f9fd55f37ec840bbfd09a00ff2019, type: 3}
 --- !u!23 &4668574456013665719
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -118,6 +117,8 @@ MonoBehaviour:
   - {x: 39, y: 1, z: 13}
   - {x: 27, y: 1, z: 9}
   - {x: 1, y: 1, z: -25}
+  followingSound: 0
+  hearingDistance: 20
 --- !u!195 &3404666649905144021
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -154,25 +155,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: 1000
   playerObject: {fileID: 0}
---- !u!114 &7232031223058035767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461047605768043487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dc8b22ff08e781478320471d3d28e4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 0}
-  audioSource: {fileID: 0}
-  playerHeard: 0
-  hearingRange:
-  - 10
-  - 16
-  - 22
-  - 28
-  - 34
-  - 40
