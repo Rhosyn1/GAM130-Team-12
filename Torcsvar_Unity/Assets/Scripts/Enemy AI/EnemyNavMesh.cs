@@ -15,8 +15,6 @@ public class EnemyNavMesh : MonoBehaviour
     private EnemyPatrolPath currentPatrol;
     private int currentPoint;
 
-    Animator animator;
-
     [SerializeField]
     private bool followingSound = false;
     private Vector3 soundLocation;
@@ -32,7 +30,6 @@ public class EnemyNavMesh : MonoBehaviour
 
         agent = GetComponent<NavMeshAgent>();
 
-        agent = transform.GetComponent<NavMeshAgent>();
         if (patrolPath != null)
         {
             currentPatrol = patrolPath;
@@ -41,14 +38,13 @@ public class EnemyNavMesh : MonoBehaviour
 
         //Used so the animator transitions stop going back to the idle
         //This is a placeholder, creature will always use the crawling anim as of right now
-        animator = GetComponent<Animator>();
-        animator.SetBool("isMoving", true);
-        animator.SetBool("crawlBool", true);
+        anim = GetComponent<Animator>();
+        anim.SetBool("walkBool", true);
     }
 
-   
     private void Update()
-    {   
+    {
+        anim.SetBool("crawlBool", false);
         //setting points for enemy
         if (currentPatrol != null && !followingSound)
         {
@@ -72,7 +68,7 @@ public class EnemyNavMesh : MonoBehaviour
         //if the enemy is within a certain distance from player then follow the player
         if (Vector3.Distance(transform.position, target.transform.position) <= 10f)
         {
-
+            anim.SetBool("crawlBool", true);
             agent.SetDestination(target.transform.position);
         }
     }
