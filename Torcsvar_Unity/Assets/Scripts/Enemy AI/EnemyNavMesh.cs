@@ -62,7 +62,7 @@ public class EnemyNavMesh : MonoBehaviour
         //checking if followsound is equal to true and enemy is less than or equals to 2m from the soundlocation then followingsound is equal to false and enemy begins patroling again. 
         if (followingSound && Vector3.Distance(gameObject.transform.position, soundLocation) <= 2f)
         {
-            followingSound = false;
+            anim.SetTrigger("lookTrigger");
         }
 
         //if the enemy is within a certain distance from player then follow the player
@@ -71,6 +71,11 @@ public class EnemyNavMesh : MonoBehaviour
             anim.SetBool("crawlBool", true);
             agent.SetDestination(target.transform.position);
         }
+    }
+
+    public void ReachedSoundDestination()
+    {
+        followingSound = false;
     }
 
     public void ReactToSound(Vector3 source)
