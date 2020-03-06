@@ -15,6 +15,8 @@ public class EnemyNavMesh : MonoBehaviour
     private EnemyPatrolPath currentPatrol;
     private int currentPoint;
 
+    Animator animator;
+
     [SerializeField]
     private bool followingSound = false;
     private Vector3 soundLocation;
@@ -36,6 +38,12 @@ public class EnemyNavMesh : MonoBehaviour
             currentPatrol = patrolPath;
             currentPoint = 0;
         }
+
+        //Used so the animator transitions stop going back to the idle
+        //This is a placeholder, creature will always use the crawling anim as of right now
+        animator = GetComponent<Animator>();
+        animator.SetBool("isMoving", true);
+        animator.SetBool("crawlBool", true);
     }
 
    
