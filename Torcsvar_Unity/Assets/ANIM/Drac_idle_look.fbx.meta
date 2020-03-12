@@ -214,7 +214,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 1
+      - time: 0.9227053
         functionName: ReachedSoundDestination
         data: 
         objectReferenceParameter: {fileID: 1461047605768043487, guid: 10dfecadb2a5be542a88fee65bacc859,
