@@ -32,6 +32,8 @@ public class EnemyNavMesh : MonoBehaviour
     private Animator anim;
 
     public EnemyState enemyState;
+
+    private PlayerCharacterController controller;
     void Start()
     {
         patrolPath = new EnemyPatrolPath(patrol);
@@ -47,6 +49,7 @@ public class EnemyNavMesh : MonoBehaviour
         anim = GetComponent<Animator>();
         anim.SetBool("walkBool", true);
         enemyState = EnemyState.walking;
+        controller = target.GetComponent<PlayerCharacterController>();
     }
 
     private void Update()
@@ -112,5 +115,14 @@ public class EnemyNavMesh : MonoBehaviour
     {
         enemyState = EnemyState.followingSound;
         soundLocation = location;
+    }
+    
+    public void EnemyAttack()
+    {
+        controller.playerHealth -= 50;
+        if (controller.playerHealth <= 0)
+        {
+            controller.Die();
+        }
     }
 }

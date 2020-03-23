@@ -2,6 +2,7 @@
 using System.Threading;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController), typeof(PlayerInputHandler), typeof(AudioSource))]
 public class PlayerCharacterController : MonoBehaviour
@@ -101,6 +102,8 @@ public class PlayerCharacterController : MonoBehaviour
     const float k_GroundCheckDistanceInAir = 0.07f;
 
     private EnemyNavMesh enemy;
+
+    public int playerHealth = 100;
 
     void Start()
     {
@@ -474,5 +477,10 @@ public class PlayerCharacterController : MonoBehaviour
 
         isCrouching = crouched;
         return true;
+    }
+
+    public void Die()
+    {
+        SceneManager.LoadScene(2);
     }
 }

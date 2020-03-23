@@ -8812,6 +8812,7 @@ PrefabInstance:
       objectReference: {fileID: 1604643788}
     m_RemovedComponents:
     - {fileID: 5595264399399246235, guid: 10dfecadb2a5be542a88fee65bacc859, type: 3}
+    - {fileID: 8186833038965632551, guid: 10dfecadb2a5be542a88fee65bacc859, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 10dfecadb2a5be542a88fee65bacc859, type: 3}
 --- !u!43 &1032791650
 Mesh:
