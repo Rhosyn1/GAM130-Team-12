@@ -55,6 +55,7 @@ public class EnemyNavMesh : MonoBehaviour
     private void Update()
     {
         anim.SetBool("crawlBool", false);
+        anim.SetBool("attackBool", false);
         //setting points for enemy
         if (currentPatrol != null && enemyState != EnemyState.followingSound)
         {
@@ -76,6 +77,11 @@ public class EnemyNavMesh : MonoBehaviour
             anim.SetBool("crawlBool", true);
             agent.SetDestination(target.transform.position);
             enemyState = EnemyState.chasing;
+
+            if (Vector3.Distance(transform.position, target.transform.position) <= 2f)
+            {
+                anim.SetBool("attackBool", true);
+            }
         }
 
         //checking if followsound is equal to true and enemy is less than or equals to 2m from the soundlocation then followingsound is equal to false and enemy begins patroling again. 
