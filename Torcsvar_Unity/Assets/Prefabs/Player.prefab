@@ -419,6 +419,7 @@ MonoBehaviour:
   jumpSFX: {fileID: 8300000, guid: c7bfff20125317946ad803d44a3b7e2b, type: 3}
   landSFX: {fileID: 8300000, guid: bf6b5183938079f41934a9fc9b4d2a03, type: 3}
   fallDamageSFX: {fileID: 8300000, guid: 0039197132f30864d804fbc03e6034a2, type: 3}
+  playerHealth: 100
 --- !u!143 &3122855503829242450
 CharacterController:
   m_ObjectHideFlags: 0
