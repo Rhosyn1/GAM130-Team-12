@@ -1,15 +1,13 @@
 fileFormatVersion: 2
-guid: 9ba3cea0dbcb95845998d02c74fe8b1a
+guid: 9f8c273300868d2499373ceec4c30e58
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: SM_Key4
-    100002: //RootNode
-    400000: SM_Key4
-    400002: //RootNode
-    2100000: lambert2
-    2300000: SM_Key4
-    3300000: SM_Key4
+    100000: //RootNode
+    400000: //RootNode
+    2100000: lambert4
+    2300000: //RootNode
+    3300000: //RootNode
     4300000: SM_Key4
   externalObjects: {}
   materials:
