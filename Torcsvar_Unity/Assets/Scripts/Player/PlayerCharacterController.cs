@@ -105,6 +105,8 @@ public class PlayerCharacterController : MonoBehaviour
 
     public int playerHealth = 100;
 
+    //animations
+    private Animator animPlayer;
     void Start()
     {
         // fetch components on the same gameObject
@@ -121,10 +123,14 @@ public class PlayerCharacterController : MonoBehaviour
         UpdateCharacterHeight(true);
 
         enemy = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyNavMesh>();
+
+        animPlayer = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
+        animPlayer.SetBool("prunBool", false);
+        animPlayer.SetBool("pwalkBool", false);
 
         hasJumpedThisFrame = false;
 
@@ -134,6 +140,7 @@ public class PlayerCharacterController : MonoBehaviour
         // Crouching
         if (m_InputHandler.GetCrouchInputDown())
         {
+            animPlayer.SetBool("crouchBool", true);
             SetCrouchingState(!isCrouching, false);
         }
 
@@ -175,7 +182,7 @@ public class PlayerCharacterController : MonoBehaviour
                 audioSource.clip = footstepSFX;
                 if (!Input.GetButton("Sprint") || !isCrouching)
                 {
-                    
+                    animPlayer.SetBool("pwalkBool", true);
                     if (audioSource.volume != 0.2f)
                     {
                         audioSource.volume = 0.2f;
@@ -186,6 +193,7 @@ public class PlayerCharacterController : MonoBehaviour
                 //Check if crouching, and adjust volume as such.
                 if (isCrouching)
                 {
+                    animPlayer.SetBool("pwalkBool", false);
                     if (audioSource.volume != 0.1f)
                     {
                         audioSource.volume = 0.1f;
@@ -196,6 +204,8 @@ public class PlayerCharacterController : MonoBehaviour
                 //Check if sprinting, and adjust volume as such.
                 if (Input.GetButton("Sprint"))
                 {
+                    animPlayer.SetBool("prunBool", true);
+                    animPlayer.SetBool("pwalkBool", false);
                     if (audioSource.volume != 0.3f)
                     {
                         audioSource.volume = 0.3f;
@@ -209,6 +219,7 @@ public class PlayerCharacterController : MonoBehaviour
         {
             audioSource.Stop();
         }
+        animPlayer.SetBool("crouchBool", isCrouching);
     }
         
 
