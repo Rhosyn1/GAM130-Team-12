@@ -5,6 +5,14 @@ using UnityEngine.AI;
 
 public class EnemyNavMesh : MonoBehaviour
 {
+    public enum EnemyState
+    {
+        walking,
+        followingSound,
+        chasing,
+        looking
+    };
+
     public Transform target;
     private NavMeshAgent agent;
 
@@ -15,8 +23,6 @@ public class EnemyNavMesh : MonoBehaviour
     private EnemyPatrolPath currentPatrol;
     private int currentPoint;
 
-    [SerializeField]
-    private bool followingSound = false;
     private Vector3 soundLocation;
 
     [SerializeField]
@@ -24,6 +30,10 @@ public class EnemyNavMesh : MonoBehaviour
 
     //animations
     private Animator anim;
+
+    public EnemyState enemyState;
+
+    private PlayerCharacterController controller;
     void Start()
     {
         patrolPath = new EnemyPatrolPath(patrol);
@@ -36,17 +46,18 @@ public class EnemyNavMesh : MonoBehaviour
             currentPoint = 0;
         }
 
-        //Used so the animator transitions stop going back to the idle
-        //This is a placeholder, creature will always use the crawling anim as of right now
         anim = GetComponent<Animator>();
         anim.SetBool("walkBool", true);
+        enemyState = EnemyState.walking;
+        controller = target.GetComponent<PlayerCharacterController>();
     }
 
     private void Update()
     {
         anim.SetBool("crawlBool", false);
+        anim.SetBool("attackBool", false);
         //setting points for enemy
-        if (currentPatrol != null && !followingSound)
+        if (currentPatrol != null && enemyState != EnemyState.followingSound)
         {
             agent.SetDestination(currentPatrol.patrolPoints[currentPoint]);
 
@@ -65,20 +76,26 @@ public class EnemyNavMesh : MonoBehaviour
         {
             anim.SetBool("crawlBool", true);
             agent.SetDestination(target.transform.position);
-            followingSound = false;
+            enemyState = EnemyState.chasing;
+
+            if (Vector3.Distance(transform.position, target.transform.position) <= 2f)
+            {
+                anim.SetBool("attackBool", true);
+            }
         }
 
         //checking if followsound is equal to true and enemy is less than or equals to 2m from the soundlocation then followingsound is equal to false and enemy begins patroling again. 
-        if (followingSound && Vector3.Distance(gameObject.transform.position, soundLocation) <= 2f)
+        if (enemyState == EnemyState.followingSound && Vector3.Distance(gameObject.transform.position, soundLocation) <= 2f)
         {
             anim.SetBool("lookTrigger", true);
+            enemyState = EnemyState.looking;
         }
     }
 
     public void ReachedSoundDestination()
     {
-        followingSound = false;
         anim.SetBool("lookTrigger", false);
+        enemyState = EnemyState.walking;
     }
 
     public void ReactToSound(Vector3 source)
@@ -93,16 +110,25 @@ public class EnemyNavMesh : MonoBehaviour
             if (coll.gameObject.CompareTag("Enemy"))
             {
                 agent.SetDestination(source);
-                UpdateHearingStatus(true, source);
+                UpdateHearingStatus(source);
                 break;
             }
         }
     }
 
     //updates the status of following and location
-    public void UpdateHearingStatus(bool followSound, Vector3 location)
+    public void UpdateHearingStatus(Vector3 location)
     {
-        followingSound = followSound;
+        enemyState = EnemyState.followingSound;
         soundLocation = location;
+    }
+    
+    public void EnemyAttack()
+    {
+        controller.playerHealth -= 50;
+        if (controller.playerHealth <= 0)
+        {
+            controller.Die();
+        }
     }
 }
