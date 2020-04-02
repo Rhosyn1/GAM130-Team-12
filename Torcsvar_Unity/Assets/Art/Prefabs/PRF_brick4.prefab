@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8196081610119487619}
+  - component: {fileID: 7042687992395049384}
   m_Layer: 0
-  m_Name: SM_brick4
+  m_Name: PRF_brick4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,6 +32,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!205 &7042687992395049384
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3407180417481200444}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.00094655156, y: 0.0013867021, z: -0.0005111098}
+  m_Size: 0.6427404
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.013361677
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 7331833286260200276}
+  m_Enabled: 1
 --- !u!1 &5984984665352727865
 GameObject:
   m_ObjectHideFlags: 0
