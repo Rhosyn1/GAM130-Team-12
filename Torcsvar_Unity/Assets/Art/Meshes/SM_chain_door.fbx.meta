@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: acc995242670cd242b74396769722e9f
+guid: 0ef08563d92b8974f9e50084334009e3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,7 +8,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: SM_Lock
+    4300000: chain_door
   externalObjects: {}
   materials:
     importMaterials: 0
