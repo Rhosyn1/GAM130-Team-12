@@ -13,10 +13,13 @@ ModelImporter:
     2100002: lambert27
     2300000: tunnel_end_4x4x4
     2300002: tunnel_end_4x4x4_collision
+    2300004: //RootNode
     3300000: tunnel_end_4x4x4
     3300002: tunnel_end_4x4x4_collision
+    3300004: //RootNode
     4300000: tunnel_end_4x4x4_collision
     4300002: tunnel_end_4x4x4
+    4300004: SM_tunnel_end_4x4
   externalObjects: {}
   materials:
     importMaterials: 0

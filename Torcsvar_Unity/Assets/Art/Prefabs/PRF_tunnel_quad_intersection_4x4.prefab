@@ -86,7 +86,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2995654886634308981}
-  - component: {fileID: 2794189541128970836}
+  - component: {fileID: 3656047212921959638}
+  - component: {fileID: 4647836073216886337}
+  - component: {fileID: 9000283669656275773}
+  - component: {fileID: 2207604554386281179}
   m_Layer: 0
   m_Name: PRF_tunnel_quad_intersection_4x4
   m_TagString: Untagged
@@ -113,8 +116,8 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2794189541128970836
-MeshCollider:
+--- !u!65 &3656047212921959638
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,10 +126,48 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 4300004, guid: c5de489fd87c00e47849c3e790d6f4e5, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4, z: 4}
+  m_Center: {x: -2, y: 2, z: 2}
+--- !u!65 &4647836073216886337
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877728612601076799}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4, z: 4}
+  m_Center: {x: 6, y: 2, z: 2}
+--- !u!65 &9000283669656275773
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877728612601076799}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4, z: 4}
+  m_Center: {x: -2, y: 2, z: -6}
+--- !u!65 &2207604554386281179
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6877728612601076799}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4, y: 4, z: 4}
+  m_Center: {x: 6, y: 2, z: -6}
 --- !u!1001 &3467396284013037950
 PrefabInstance:
   m_ObjectHideFlags: 0
