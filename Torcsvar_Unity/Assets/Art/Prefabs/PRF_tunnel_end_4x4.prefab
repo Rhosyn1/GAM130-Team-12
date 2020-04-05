@@ -90,7 +90,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2327606409761086598}
-  m_Mesh: {fileID: 4300004, guid: 8b4d8580cec02e040ab44e1e732afa62, type: 3}
+  m_Mesh: {fileID: 4300006, guid: 8b4d8580cec02e040ab44e1e732afa62, type: 3}
 --- !u!23 &2327606409758884420
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -226,6 +226,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2327606409761177764}
     m_Modifications:
+    - target: {fileID: 3538914207201779029, guid: beaa21fcc2f7b3845baf4e32b132f155,
+        type: 3}
+      propertyPath: m_Name
+      value: PRF_brick3 (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 5704161372774340440, guid: beaa21fcc2f7b3845baf4e32b132f155,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -295,11 +300,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.0507004
-      objectReference: {fileID: 0}
-    - target: {fileID: 3538914207201779029, guid: beaa21fcc2f7b3845baf4e32b132f155,
-        type: 3}
-      propertyPath: m_Name
-      value: PRF_brick3 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: beaa21fcc2f7b3845baf4e32b132f155, type: 3}
@@ -406,6 +406,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2327606409761177764}
     m_Modifications:
+    - target: {fileID: 3538914207201779029, guid: beaa21fcc2f7b3845baf4e32b132f155,
+        type: 3}
+      propertyPath: m_Name
+      value: PRF_brick3
+      objectReference: {fileID: 0}
     - target: {fileID: 5704161372774340440, guid: beaa21fcc2f7b3845baf4e32b132f155,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -475,11 +480,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 1.050703
-      objectReference: {fileID: 0}
-    - target: {fileID: 3538914207201779029, guid: beaa21fcc2f7b3845baf4e32b132f155,
-        type: 3}
-      propertyPath: m_Name
-      value: PRF_brick3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: beaa21fcc2f7b3845baf4e32b132f155, type: 3}

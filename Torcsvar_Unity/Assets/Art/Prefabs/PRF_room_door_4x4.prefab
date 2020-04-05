@@ -256,6 +256,7 @@ Transform:
   - {fileID: 3401343479353530397}
   - {fileID: 8632584963258022022}
   - {fileID: 5512800132991718342}
+  - {fileID: 4814201081839274623}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3970,6 +3971,81 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7159472000806202700}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7250140855642493368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4299199526897706866}
+    m_Modifications:
+    - target: {fileID: 8614500227502958472, guid: 908dc9ebec18da445aa98721eb2ab667,
+        type: 3}
+      propertyPath: m_Name
+      value: PRF_Corridor_Bricks_Full (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761505721383836615, guid: 908dc9ebec18da445aa98721eb2ab667,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.0228286
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761505721383836615, guid: 908dc9ebec18da445aa98721eb2ab667,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.15900004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761505721383836615, guid: 908dc9ebec18da445aa98721eb2ab667,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.8630776
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761505721383836615, guid: 908dc9ebec18da445aa98721eb2ab667,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761505721383836615, guid: 908dc9ebec18da445aa98721eb2ab667,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071099
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761505721383836615, guid: 908dc9ebec18da445aa98721eb2ab667,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761505721383836615, guid: 908dc9ebec18da445aa98721eb2ab667,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071037
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761505721383836615, guid: 908dc9ebec18da445aa98721eb2ab667,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 59
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761505721383836615, guid: 908dc9ebec18da445aa98721eb2ab667,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761505721383836615, guid: 908dc9ebec18da445aa98721eb2ab667,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -269.999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2761505721383836615, guid: 908dc9ebec18da445aa98721eb2ab667,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 908dc9ebec18da445aa98721eb2ab667, type: 3}
+--- !u!4 &4814201081839274623 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2761505721383836615, guid: 908dc9ebec18da445aa98721eb2ab667,
+    type: 3}
+  m_PrefabInstance: {fileID: 7250140855642493368}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7253732811915324905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3977,6 +4053,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4299199526897706866}
     m_Modifications:
+    - target: {fileID: 3538914207201779029, guid: beaa21fcc2f7b3845baf4e32b132f155,
+        type: 3}
+      propertyPath: m_Name
+      value: PRF_brick3
+      objectReference: {fileID: 0}
     - target: {fileID: 5704161372774340440, guid: beaa21fcc2f7b3845baf4e32b132f155,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4046,11 +4127,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.8825866
-      objectReference: {fileID: 0}
-    - target: {fileID: 3538914207201779029, guid: beaa21fcc2f7b3845baf4e32b132f155,
-        type: 3}
-      propertyPath: m_Name
-      value: PRF_brick3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: beaa21fcc2f7b3845baf4e32b132f155, type: 3}

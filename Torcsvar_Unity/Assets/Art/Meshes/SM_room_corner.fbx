@@ -7,12 +7,12 @@ FBXHeaderExtension:  {
 	CreationTimeStamp:  {
 		Version: 1000
 		Year: 2020
-		Month: 3
-		Day: 21
-		Hour: 18
-		Minute: 31
-		Second: 31
-		Millisecond: 294
+		Month: 4
+		Day: 4
+		Hour: 20
+		Minute: 33
+		Second: 35
+		Millisecond: 587
 	}
 	Creator: "FBX SDK/FBX Plugins version 2019.2"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
@@ -28,21 +28,20 @@ FBXHeaderExtension:  {
 			Comment: ""
 		}
 		Properties70:  {
-			P: "DocumentUrl", "KString", "Url", "", "D:\Me\Documents\torcsvar\GAM130-Team-12\Torcsvar_Unity\Assets\Art\Meshes\room_corner.fbx"
-			P: "SrcDocumentUrl", "KString", "Url", "", "D:\Me\Documents\torcsvar\GAM130-Team-12\Torcsvar_Unity\Assets\Art\Meshes\room_corner.fbx"
+			P: "DocumentUrl", "KString", "Url", "", "D:\Me\Documents\torcsvar\GAM130-Team-12\Torcsvar_Unity\Assets\Art\Meshes\SM_room_corner.fbx"
+			P: "SrcDocumentUrl", "KString", "Url", "", "D:\Me\Documents\torcsvar\GAM130-Team-12\Torcsvar_Unity\Assets\Art\Meshes\SM_room_corner.fbx"
 			P: "Original", "Compound", "", ""
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "Maya"
 			P: "Original|ApplicationVersion", "KString", "", "", "201805"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "21/03/2020 18:31:31.292"
-			P: "Original|FileName", "KString", "", "", "D:\Me\Documents\torcsvar\GAM130-Team-12\Torcsvar_Unity\Assets\Art\Meshes\room_corner.fbx"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "04/04/2020 19:33:35.585"
+			P: "Original|FileName", "KString", "", "", "D:\Me\Documents\torcsvar\GAM130-Team-12\Torcsvar_Unity\Assets\Art\Meshes\SM_room_corner.fbx"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "Maya"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "201805"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "21/03/2020 18:31:31.292"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "04/04/2020 19:33:35.585"
 			P: "Original|ApplicationActiveProject", "KString", "", "", "D:\Me\Documents\torcsvar\GAM130-Team-12\Torcsvar_Unity\Assets\Art\Meshes"
-			P: "Original|ApplicationNativeFile", "KString", "", "", "D:\Me\Documents\maya\projects\default\scenes\sertsetrstrysr.ma"
 		}
 	}
 }
@@ -77,7 +76,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 2773417038576, "", "Scene" {
+	Document: 1824200425616, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", "Take 001"
@@ -222,15 +221,15 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	Geometry: 2773510032000, "Geometry::", "Mesh" {
-		Vertices: *36 {
-			a: 0,0,0,0,300,0,-1.1444091796875e-05,0,200,-1.1444091796875e-05,300,200,-200,300,0,-200,0,0,50.0000267028809,0,-50,50.0000190734863,0,200,50.0000190734863,300,200,50.0000267028809,300,-50,-199.999969482422,300,-50,-199.999969482422,0,-50
+	Geometry: 1824571605616, "Geometry::", "Mesh" {
+		Vertices: *18 {
+			a: 0,0,0,0,400,0,-1.1444091796875e-05,0,200,-1.1444091796875e-05,400,200,-200,400,0,-200,0,0
 		} 
-		PolygonVertexIndex: *40 {
-			a: 6,9,8,-8,10,9,6,-12,0,2,3,-2,4,5,0,-2,0,6,7,-3,2,7,8,-4,3,8,9,-2,4,10,11,-6,5,11,6,-1,1,9,10,-5
+		PolygonVertexIndex: *8 {
+			a: 0,2,3,-2,4,5,0,-2
 		} 
-		Edges: *20 {
-			a: 11,8,10,9,15,13,12,16,18,3,22,2,26,1,0,28,30,7,6,4
+		Edges: *7 {
+			a: 0,1,2,3,4,5,7
 		} 
 		GeometryVersion: 124
 		LayerElementNormal: 0 {
@@ -238,8 +237,8 @@ Objects:  {
 			Name: ""
 			MappingInformationType: "ByPolygonVertex"
 			ReferenceInformationType: "Direct"
-			Normals: *120 {
-				a: 0.999999940395355,0,3.05175795745072e-08,0.999999940395355,0,3.05175795745072e-08,0.999999940395355,0,3.05175795745072e-08,0.999999940395355,0,3.05175795745072e-08,0,0,-0.999999940395355,0,0,-0.999999940395355,0,0,-0.999999940395355,0,0,-0.999999940395355,-0.999999940395355,0,-5.72204612581118e-08,-0.999999940395355,0,-5.72204612581118e-08,-0.999999940395355,0,-5.72204612581118e-08,-0.999999940395355,0,-5.72204612581118e-08,0,0,0.999999940395355,0,0,0.999999940395355,0,0,0.999999940395355,0,0,0.999999940395355,0,-1,0,0,-1,0,0,-1,0,0,-1,0,0,0,1,0,0,1,0,0,1,0,0,1,0,1,4.47590906560436e-08,0,1,4.47590942087572e-08,0,1,2.23795613152333e-08,0,1,2.23795524334491e-08,-0.999999940395355,0,-6.10351548857579e-07,-0.999999940395355,0,-6.10351548857579e-07,-0.999999940395355,0,-6.10351548857579e-07,-0.999999940395355,0,-6.10351548857579e-07,0,-0.999999940395355,0,0,-1,0,0,-1,0,0,-1,0,0,1,2.23795524334491e-08,0,1,2.23795613152333e-08,0,1,0,0,0.999999940395355,0
+			Normals: *24 {
+				a: -1,0,-5.72204683635391e-08,-1,0,-5.72204683635391e-08,-1,0,-5.72204683635391e-08,-1,0,-5.72204683635391e-08,0,0,1,0,0,1,0,0,1,0,0,1
 			} 
 		}
 		LayerElementBinormal: 0 {
@@ -247,8 +246,8 @@ Objects:  {
 			Name: "map1"
 			MappingInformationType: "ByPolygonVertex"
 			ReferenceInformationType: "Direct"
-			Binormals: *120 {
-				a: 0,0,0,0,0,0,0,0,0,0,0,0,0,-0,0,0,-0,0,0,-0,0,0,-0,0,2.23394718522341e-12,1,-3.90410496038385e-05,2.22883105201188e-12,1,-3.89516389986966e-05,2.22371491880036e-12,1,-3.88622283935547e-05,2.22883105201188e-12,1,-3.89516389986966e-05,-3.93390655517578e-05,1,0,-3.92198599001858e-05,1,0,-3.91006542486139e-05,1,0,-3.92198599001858e-05,1,0,-0,0,0,-0,0,0,-0,0,0,-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0,0,0,-0,0,0,-0,0,0,-0,-0,0,0,-0,0,0,-0,0,0,-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+			Binormals: *24 {
+				a: 2.23394696838297e-12,1,-3.90410459658597e-05,1.60468480950998e-12,1,-2.80438944173511e-05,9.75422650636992e-13,1,-1.70467428688426e-05,1.60468480950998e-12,1,-2.80438944173511e-05,-1.71663286891999e-05,1,0,-2.81334905594122e-05,1,0,-3.91006506106351e-05,1,0,-2.81334905594122e-05,1,0
 			} 
 		}
 		LayerElementTangent: 0 {
@@ -256,8 +255,8 @@ Objects:  {
 			Name: "map1"
 			MappingInformationType: "ByPolygonVertex"
 			ReferenceInformationType: "Direct"
-			Tangents: *120 {
-				a: 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-5.72204648108254e-08,3.90410496038385e-05,1,-5.72204648108254e-08,3.89516389986966e-05,1,-5.72204648108254e-08,3.88622283935547e-05,1,-5.72204648108254e-08,3.89516389986966e-05,1,1,3.93390655517578e-05,-0,1,3.92198599001858e-05,-0,1,3.91006542486139e-05,-0,1,3.92198599001858e-05,-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+			Tangents: *24 {
+				a: -5.72204683635391e-08,3.90410459658597e-05,1,-5.72204683635391e-08,2.80438944173511e-05,1,-5.72204683635391e-08,1.70467428688426e-05,1,-5.72204683635391e-08,2.80438944173511e-05,1,1,1.71663286891999e-05,-0,1,2.81334905594122e-05,-0,1,3.91006506106351e-05,-0,1,2.81334905594122e-05,-0
 			} 
 		}
 		LayerElementUV: 0 {
@@ -266,10 +265,10 @@ Objects:  {
 			MappingInformationType: "ByPolygonVertex"
 			ReferenceInformationType: "IndexToDirect"
 			UV: *12 {
-				a: 0.5,-1.95503234863281e-05,0.999999940395355,-3.90708446502686e-05,1.00002920627594,0.749960899353027,0.50002920627594,0.749980330467224,2.93254852294922e-05,0.75,0,0
+				a: 0.5,-1.95503234863281e-05,0.999999940395355,-3.90708446502686e-05,1.00002920627594,0.999971807003021,0.50002920627594,0.999980330467224,2.93254852294922e-05,0.999988913536072,0,0
 			} 
-			UVIndex: *40 {
-				a: -1,-1,-1,-1,-1,-1,-1,-1,0,1,2,3,4,5,0,3,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1
+			UVIndex: *8 {
+				a: 0,1,2,3,4,5,0,3
 			} 
 		}
 		LayerElementSmoothing: 0 {
@@ -277,8 +276,8 @@ Objects:  {
 			Name: ""
 			MappingInformationType: "ByEdge"
 			ReferenceInformationType: "Direct"
-			Smoothing: *20 {
-				a: 0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0
+			Smoothing: *7 {
+				a: 0,0,0,0,0,0,0
 			} 
 		}
 		LayerElementMaterial: 0 {
@@ -318,15 +317,15 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 2773510031488, "Geometry::", "Mesh" {
+	Geometry: 1824571608688, "Geometry::", "Mesh" {
 		Vertices: *18 {
-			a: 0,0,0,0,300,0,-7.62939453125e-06,0,200,-7.62939453125e-06,300,200,-200,300,0,-200,0,0
+			a: 0,0,0,0,400,0,-7.62939453125e-06,0,200,-7.62939453125e-06,400,200,-200,400,0,-200,0,0
 		} 
 		PolygonVertexIndex: *8 {
 			a: 0,2,3,-2,4,5,0,-2
 		} 
 		Edges: *7 {
-			a: 3,0,2,1,7,5,4
+			a: 0,1,2,3,4,5,7
 		} 
 		GeometryVersion: 124
 		LayerElementNormal: 0 {
@@ -335,7 +334,7 @@ Objects:  {
 			MappingInformationType: "ByPolygonVertex"
 			ReferenceInformationType: "Direct"
 			Normals: *24 {
-				a: -1,0,4.44089209850063e-16,-0.999999940395355,0,-3.81469718035987e-08,-0.999999940395355,0,-3.81469718035987e-08,-1,-3.43329595864361e-08,-4.29153423908701e-08,0,0,0.999999940395355,0,0,0.999999940395355,0,0,1,4.29153388381565e-08,-3.43329595864361e-08,1
+				a: -1,0,4.44089209850063e-16,-1,0,-3.81469753563124e-08,-1,0,-3.81469753563124e-08,-1,-3.43329595864361e-08,-4.29153423908701e-08,0,0,1,0,0,1,0,0,1,4.29153388381565e-08,-3.43329595864361e-08,1
 			} 
 		}
 		LayerElementSmoothing: 0 {
@@ -372,7 +371,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 2773501926576, "Model::room_corner", "Mesh" {
+	Model: 1824603375712, "Model::room_corner", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -384,7 +383,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Model: 2773501933536, "Model::room_corner_collision", "Mesh" {
+	Model: 1824603345552, "Model::room_corner_collision", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationActive", "bool", "", "",1
@@ -396,7 +395,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 2773442917392, "Material::lambert4", "" {
+	Material: 1824434554816, "Material::lambert39", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -419,20 +418,20 @@ Objects:  {
 Connections:  {
 	
 	;Model::room_corner, Model::RootNode
-	C: "OO",2773501926576,0
+	C: "OO",1824603375712,0
 	
 	;Model::room_corner_collision, Model::RootNode
-	C: "OO",2773501933536,0
+	C: "OO",1824603345552,0
 	
 	;Geometry::, Model::room_corner
-	C: "OO",2773510032000,2773501926576
+	C: "OO",1824571605616,1824603375712
 	
-	;Material::lambert4, Model::room_corner
-	C: "OO",2773442917392,2773501926576
+	;Material::lambert39, Model::room_corner
+	C: "OO",1824434554816,1824603375712
 	
 	;Geometry::, Model::room_corner_collision
-	C: "OO",2773510031488,2773501933536
+	C: "OO",1824571608688,1824603345552
 	
-	;Material::lambert4, Model::room_corner_collision
-	C: "OO",2773442917392,2773501933536
+	;Material::lambert39, Model::room_corner_collision
+	C: "OO",1824434554816,1824603345552
 }

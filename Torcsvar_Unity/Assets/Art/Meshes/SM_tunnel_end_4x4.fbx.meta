@@ -20,6 +20,7 @@ ModelImporter:
     4300000: tunnel_end_4x4x4_collision
     4300002: tunnel_end_4x4x4
     4300004: SM_tunnel_end_4x4
+    4300006: tunnel_end_4x4
   externalObjects: {}
   materials:
     importMaterials: 0
