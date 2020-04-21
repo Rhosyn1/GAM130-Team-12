@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3699787754061052338}
   - component: {fileID: 5194896371531923608}
   - component: {fileID: 5953818784978648183}
+  - component: {fileID: 1285448972788118655}
   m_Layer: 11
   m_Name: Key
   m_TagString: Key
@@ -108,3 +109,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 122
   m_CollisionDetection: 0
+--- !u!208 &1285448972788118655
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769683861192650739}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
