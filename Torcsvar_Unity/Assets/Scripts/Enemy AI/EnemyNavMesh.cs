@@ -75,7 +75,8 @@ public class EnemyNavMesh : MonoBehaviour
         if (Vector3.Distance(transform.position, target.transform.position) <= 10f)
         {
             anim.SetBool("crawlBool", true);
-            agent.SetDestination(target.transform.position);
+            Vector3 playerPos = new Vector3(target.transform.position.x, target.transform.position.y + 0.9f, target.transform.position.z);
+            agent.SetDestination(playerPos);
             enemyState = EnemyState.chasing;
 
             if (Vector3.Distance(transform.position, target.transform.position) <= 2f)

@@ -484,7 +484,7 @@ MonoBehaviour:
   SFXFrequencyWhileJumping: 5
   SFXFrequencyWhileLanding: 8
   SFXFrequencyWhileTakingFallDamage: 10
-  footstepSFX: {fileID: 8300000, guid: 52d31f5e9eba4464795f2dcbcde32608, type: 3}
+  footstepSFX: {fileID: 8300000, guid: 9f86bddded9839048adacdfcc70f5048, type: 3}
   jumpSFX: {fileID: 8300000, guid: c7bfff20125317946ad803d44a3b7e2b, type: 3}
   landSFX: {fileID: 8300000, guid: bf6b5183938079f41934a9fc9b4d2a03, type: 3}
   fallDamageSFX: {fileID: 8300000, guid: 0039197132f30864d804fbc03e6034a2, type: 3}
@@ -506,7 +506,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.001
   m_MinMoveDistance: 0
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &402082967780299635
 MonoBehaviour:
   m_ObjectHideFlags: 0
