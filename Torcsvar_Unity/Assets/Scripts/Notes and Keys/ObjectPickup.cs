@@ -15,9 +15,7 @@ public class ObjectPickup : MonoBehaviour
     public Text pickUpText;
     public Text pickUpNote;
 
-    public GameObject Note;
-
-    public Image image;
+    private Image image;
 
     public GameObject roomDoor;
 
@@ -46,6 +44,8 @@ public class ObjectPickup : MonoBehaviour
             //looking for the tag note.
             if (hit.transform.CompareTag("Note"))
             {
+                image = hit.transform.gameObject.GetComponentInChildren<Image>(true);
+                Debug.Log(image);
                 //displaying text so that the player knows which key to press.
                 if (!image.gameObject.activeSelf)
                 {
@@ -71,7 +71,11 @@ public class ObjectPickup : MonoBehaviour
             else
             {
                 pickUpNote.gameObject.SetActive(false);
-                image.gameObject.SetActive(false);
+                if (image != null)
+                {
+                    image.gameObject.SetActive(false);
+                }
+                
             }                   
             
             //if all 5 keys have been collected then door opens.
